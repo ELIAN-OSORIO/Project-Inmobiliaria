@@ -1,96 +1,75 @@
-# TITULO DEL DESIGN DOC
+# Generador de Códigos QR para Bienes Raíces
 
 Link: [Link a este design doc](#)
 
-Author(s): Charlie L
+Autor: Salazar Silva Juan Carlos, San Miguel Osorio Jesus Elian
 
-Status: [Draft, Ready for review, In Review, Reviewed]
+Estado: [Listo para revisión]
 
-Ultima actualización: YYYY-MM-DD
+Última actualización: 2024-03-05
 
 ## Contenido
 
-- Goals
-- Non-Goals
-- Background
-- Overview
-- Detailed Design
-  - Solucion 1
-    - Frontend
-    - Backend
-  - Solucion 2
+- Objetivos
+- No Objetivos
+- Antecedentes
+- Visión General
+- Diseño Detallado
+  - Solución 1
     - Frontend
     - Backend
 - Consideraciones
 - Métricas
 
-## Links
+## Enlaces
 
-- [Un link](#)
-- [Otro link](#)
+- [Un enlace](#)
+- [Otro enlace](#)
 
 ## Objetivo
 
-"Una aplicación móvil en la cual, a través de un pequeño formulario de preguntas, se genere un código QR."
+Desarrollar una aplicación móvil y una página web progresiva (PWA) donde los usuarios puedan generar códigos QR para compartir datos sobre terrenos, locales, departamentos y casas en renta o venta, utilizando Flutter y Firebase de Google como base de datos.
 
-## Goals
+## Objetivos
 
-- Goals
+- Permitir a los usuarios generar códigos QR con información detallada sobre propiedades inmobiliarias.
+- Facilitar el intercambio de datos sobre bienes raíces mediante códigos QR.
+- Integrar la aplicación móvil con una base de datos en tiempo real para garantizar la sincronización de datos.
 
-## Non-Goals
+## No Objetivos
 
-- Non-Goals
+- No se pretende desarrollar funcionalidades avanzadas de búsqueda o filtrado de propiedades.
+- No se incluirán características de gestión de transacciones financieras dentro de la aplicación.
 
-## Background
+## Antecedentes
 
-"Un ejemplo es el caso de Facebook, donde las personas se anuncian para rentar o comprar casas. Sin embargo, surge un problema ya que muchas veces la descripción del lugar o las condiciones que se presentan proporcionan muy poca información."
+El proceso de publicidad y promoción de propiedades inmobiliarias a menudo carece de una descripción detallada o condiciones claras, lo que puede dificultar la toma de decisiones para los interesados.
 
-## Overview
+## Visión General
 
-_Overview a alto nivel de tu propuesta_
+La aplicación permitirá a los usuarios ingresar información sobre propiedades inmobiliarias, como descripción, ubicación, precio, imágenes, etc. Luego, esta información se convertirá en un código QR único que los usuarios pueden compartir fácilmente. La página web PWA proporcionará una interfaz adicional para acceder y generar códigos QR desde dispositivos de escritorio.
 
-_Esta sección debería ser entendible por nuevos miembros de tu equipo que no están relacionados al proyecto_
+## Diseño Detallado
 
-_Pon detalles en la siguiente sección_
+Se utilizará Flutter para desarrollar la aplicación móvil y la página web PWA. Firebase de Google se empleará como la base de datos en tiempo real para almacenar y sincronizar los datos de las propiedades.
 
-## Detailed Design
+### Solución 1
 
-_Usa diagramas donde veas necesario_
+#### Frontend
 
-_Herramientas como [Excalidraw](https://excalidraw.com) son buenos recursos para esto_
+El frontend de la aplicación se desarrollará utilizando Flutter. Se crearán pantallas para ingresar información sobre la propiedad, visualizar los detalles antes de generar el código QR y mostrar el código QR generado.
 
-_Cubre los cambios principales:_
+#### Backend
 
-_- Cuales son las nuevas funciones que vas a escribir?_
-_- Porque necesitas nuevos componentes?_
-_- Hay código que puede ser reusable?_
-
-_No elabores minuciosamente la implementación._
-
-## Solution 1
-
-### Frontend
-
-_Frontend…_
-
-### Backend
-
-_Backend…_
-
-## Solution 2
-
-### Frontend
-
-_Frontend…_
-
-### Backend
-
-_Backend…_
+Para el backend, se utilizará Firebase como base de datos para almacenar los detalles de las propiedades. Se configurarán reglas de seguridad para garantizar que solo los usuarios autorizados puedan acceder y modificar los datos.
 
 ## Consideraciones
 
-_Preocupaciones / trade-offs / tech debt_
+- La seguridad de los datos es fundamental, por lo que se implementarán medidas de autenticación y autorización robustas.
+- Se debe considerar la compatibilidad con diferentes dispositivos móviles y navegadores web al desarrollar la aplicación y la página web PWA.
 
 ## Métricas
 
-_Que información necesitas para validar antes de lanzar este feature?_
+- Número de usuarios activos mensuales.
+- Cantidad de códigos QR generados por día.
+- Retroalimentación de los usuarios sobre la facilidad de uso de la aplicación y la página web PWA.
