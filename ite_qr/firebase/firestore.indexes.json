@@ -1,0 +1,18 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "propiedades",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "owner",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_at",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "877526367865",
+    "project_id": "ite-qr-28vrnz",
+    "storage_bucket": "ite-qr-28vrnz.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:877526367865:android:3c0dddee5536f0d15b5ea8",
+        "android_client_info": {
+          "package_name": "com.mycompany.iteqr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWxPPhrp_c8T8KoeXfAr42e1tU_A9pY6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
