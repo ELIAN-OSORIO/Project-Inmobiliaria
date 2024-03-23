@@ -1,16 +1,16 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/components/navbar/navbar_widget.dart';
-import 'formulario_widget.dart' show FormularioWidget;
+import 'formulario_editar_widget.dart' show FormularioEditarWidget;
 import 'package:flutter/material.dart';
 
-class FormularioModel extends FlutterFlowModel<FormularioWidget> {
+class FormularioEditarModel extends FlutterFlowModel<FormularioEditarWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  final formKey2 = GlobalKey<FormState>();
-  final formKey1 = GlobalKey<FormState>();
   final formKey3 = GlobalKey<FormState>();
+  final formKey1 = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
   // Model for Navbar component.
   late NavbarModel navbarModel1;
   // Model for Navbar component.

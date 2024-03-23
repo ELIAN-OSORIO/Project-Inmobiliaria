@@ -6,27 +6,32 @@ import '/pages/components/navbar/navbar_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'inicio_model.dart';
-export 'inicio_model.dart';
+import 'buscando_model.dart';
+export 'buscando_model.dart';
 
-class InicioWidget extends StatefulWidget {
-  const InicioWidget({super.key});
+class BuscandoWidget extends StatefulWidget {
+  const BuscandoWidget({
+    super.key,
+    this.search,
+  });
+
+  final String? search;
 
   @override
-  State<InicioWidget> createState() => _InicioWidgetState();
+  State<BuscandoWidget> createState() => _BuscandoWidgetState();
 }
 
-class _InicioWidgetState extends State<InicioWidget> {
-  late InicioModel _model;
+class _BuscandoWidgetState extends State<BuscandoWidget> {
+  late BuscandoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => InicioModel());
+    _model = createModel(context, () => BuscandoModel());
 
-    _model.textController ??= TextEditingController();
+    _model.textController ??= TextEditingController(text: widget.search);
     _model.textFieldFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -42,7 +47,7 @@ class _InicioWidgetState extends State<InicioWidget> {
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'Inicio',
+        title: 'Buscando',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
@@ -390,6 +395,11 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                 FFButtonWidget(
                                                               onPressed:
                                                                   () async {
+                                                                if (Navigator.of(
+                                                                        context)
+                                                                    .canPop()) {
+                                                                  context.pop();
+                                                                }
                                                                 context
                                                                     .pushNamed(
                                                                   'Buscando',
@@ -397,9 +407,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                       {
                                                                     'search':
                                                                         serializeParam(
-                                                                      _model
-                                                                          .textController
-                                                                          .text,
+                                                                      '',
                                                                       ParamType
                                                                           .String,
                                                                     ),
@@ -508,9 +516,10 @@ class _InicioWidgetState extends State<InicioWidget> {
                                             stream: queryPropiedadesRecord(
                                               queryBuilder:
                                                   (propiedadesRecord) =>
-                                                      propiedadesRecord.orderBy(
-                                                          'created_at',
-                                                          descending: true),
+                                                      propiedadesRecord.where(
+                                                'municipio',
+                                                isNotEqualTo: widget.search,
+                                              ),
                                             ),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
@@ -1059,7 +1068,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                               Align(
                                                                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                 child: Text(
-                                                                                  ', ',
+                                                                                  ',',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                 ),
                                                                               ),
@@ -1109,7 +1118,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                                                               Align(
                                                                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                 child: Text(
-                                                                                  ', ',
+                                                                                  ',',
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                 ),
                                                                               ),

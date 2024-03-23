@@ -1,20 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/lat_lng.dart';
-import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -79,62 +73,84 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? InicioWidget() : LoginWidget(),
+          appStateNotifier.loggedIn ? const InicioWidget() : const LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? InicioWidget() : LoginWidget(),
+              appStateNotifier.loggedIn ? const InicioWidget() : const LoginWidget(),
           routes: [
             FFRoute(
               name: 'Inicio',
               path: 'inicio',
-              builder: (context, params) => InicioWidget(),
+              builder: (context, params) => const InicioWidget(),
             ),
             FFRoute(
               name: 'Login',
               path: 'login',
-              builder: (context, params) => LoginWidget(),
+              builder: (context, params) => const LoginWidget(),
             ),
             FFRoute(
               name: 'Perfil',
               path: 'Perfil',
               requireAuth: true,
-              builder: (context, params) => PerfilWidget(),
+              builder: (context, params) => const PerfilWidget(),
             ),
             FFRoute(
               name: 'Formulario',
               path: 'formulario',
               requireAuth: true,
-              builder: (context, params) => FormularioWidget(),
-            ),
-            FFRoute(
-              name: 'PerfilPublicaciones',
-              path: 'formulario4',
-              requireAuth: true,
-              builder: (context, params) => PerfilPublicacionesWidget(),
+              builder: (context, params) => const FormularioWidget(),
             ),
             FFRoute(
               name: 'PerfilEditarNombre',
               path: 'PerfilEditarNombre',
               requireAuth: true,
-              builder: (context, params) => PerfilEditarNombreWidget(),
+              builder: (context, params) => const PerfilEditarNombreWidget(),
             ),
             FFRoute(
-              name: 'PerfilPublicacionesCopy',
-              path: 'formulario5',
+              name: 'Publicaciones',
+              path: 'Publicaciones',
               requireAuth: true,
-              builder: (context, params) => PerfilPublicacionesCopyWidget(),
-            ),
-            FFRoute(
-              name: 'Propiedad',
-              path: 'propiedad',
               asyncParams: {
                 'propiedadRef':
                     getDoc(['propiedades'], PropiedadesRecord.fromSnapshot),
               },
-              builder: (context, params) => PropiedadWidget(
+              builder: (context, params) => PublicacionesWidget(
+                propiedadRef:
+                    params.getParam('propiedadRef', ParamType.Document),
+              ),
+            ),
+            FFRoute(
+              name: 'Publicacion',
+              path: 'Publicacion',
+              asyncParams: {
+                'propiedadRef':
+                    getDoc(['propiedades'], PropiedadesRecord.fromSnapshot),
+              },
+              builder: (context, params) => PublicacionWidget(
+                propiedadRef:
+                    params.getParam('propiedadRef', ParamType.Document),
+                scannedValue: params.getParam('scannedValue', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'Buscando',
+              path: 'Buscar',
+              builder: (context, params) => BuscandoWidget(
+                search: params.getParam('search', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'FormularioEditar',
+              path: 'formularioedit',
+              requireAuth: true,
+              asyncParams: {
+                'propiedadRef':
+                    getDoc(['propiedades'], PropiedadesRecord.fromSnapshot),
+              },
+              builder: (context, params) => FormularioEditarWidget(
                 propiedadRef:
                     params.getParam('propiedadRef', ParamType.Document),
               ),
@@ -373,7 +389,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

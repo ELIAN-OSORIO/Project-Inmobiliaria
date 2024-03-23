@@ -8,6 +8,7 @@ export '../base_auth_user_provider.dart';
 class IteQrFirebaseUser extends BaseAuthUser {
   IteQrFirebaseUser(this.user);
   User? user;
+  @override
   bool get loggedIn => user != null;
 
   @override

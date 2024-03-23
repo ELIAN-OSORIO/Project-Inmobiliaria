@@ -5,10 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/components/navbar/navbar_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'perfil_editar_nombre_model.dart';
 export 'perfil_editar_nombre_model.dart';
 
@@ -60,7 +57,7 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
               child: wrapWithModel(
                 model: _model.navbarModel1,
                 updateCallback: () => setState(() {}),
-                child: NavbarWidget(),
+                child: const NavbarWidget(),
               ),
             ),
             appBar: responsiveVisibility(
@@ -110,7 +107,7 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                             ),
                       ),
                     ),
-                    actions: [],
+                    actions: const [],
                     centerTitle: true,
                     elevation: 4.0,
                   )
@@ -134,7 +131,7 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                               child: wrapWithModel(
                                 model: _model.navbarModel2,
                                 updateCallback: () => setState(() {}),
-                                child: NavbarWidget(),
+                                child: const NavbarWidget(),
                               ),
                             ),
                         ],
@@ -142,20 +139,20 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                     ],
                   ),
                   Expanded(
-                    child: Container(
+                    child: SizedBox(
                       width: 1165.0,
                       height: double.infinity,
                       child: Stack(
                         children: [
                           Padding(
-                            padding: EdgeInsets.all(6.0),
+                            padding: const EdgeInsets.all(6.0),
                             child: Container(
                               width: double.infinity,
                               height: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
@@ -174,7 +171,7 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                           .secondaryBackground,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Card(
                                         clipBehavior:
@@ -188,12 +185,12 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                         ),
                                         child: Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 10.0, 0.0),
                                           child: Stack(
                                             children: [
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.01, 0.03),
                                                 child: Text(
                                                   currentUserEmail,
@@ -203,10 +200,10 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     -1.0, 0.23),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -218,10 +215,10 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, 0.51),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: TextFormField(
@@ -301,7 +298,7 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Container(
                                                   width: 150.0,
@@ -311,8 +308,16 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                             context)
                                                         .accent1,
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.0),
+                                                        const BorderRadius.only(
+                                                      bottomLeft:
+                                                          Radius.circular(10.0),
+                                                      bottomRight:
+                                                          Radius.circular(10.0),
+                                                      topLeft:
+                                                          Radius.circular(10.0),
+                                                      topRight:
+                                                          Radius.circular(10.0),
+                                                    ),
                                                     border: Border.all(
                                                       color:
                                                           FlutterFlowTheme.of(
@@ -323,7 +328,7 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsets.all(2.0),
+                                                        const EdgeInsets.all(2.0),
                                                     child: AuthUserStreamWidget(
                                                       builder: (context) =>
                                                           ClipRRect(
@@ -333,11 +338,11 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                         child:
                                                             CachedNetworkImage(
                                                           fadeInDuration:
-                                                              Duration(
+                                                              const Duration(
                                                                   milliseconds:
                                                                       500),
                                                           fadeOutDuration:
-                                                              Duration(
+                                                              const Duration(
                                                                   milliseconds:
                                                                       500),
                                                           imageUrl:
@@ -356,10 +361,10 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.98, 0.9),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           8.0, 0.0, 8.0, 0.0),
                                                   child: FFButtonWidget(
@@ -379,14 +384,14 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                     options: FFButtonOptions(
                                                       height: 40.0,
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   24.0,
                                                                   0.0,
                                                                   24.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -407,7 +412,7 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                                     .white,
                                                               ),
                                                       elevation: 3.0,
-                                                      borderSide: BorderSide(
+                                                      borderSide: const BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -420,7 +425,7 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                 ),
                                               ),
                                               Align(
-                                                alignment: AlignmentDirectional(
+                                                alignment: const AlignmentDirectional(
                                                     0.01, -0.1),
                                                 child: AuthUserStreamWidget(
                                                   builder: (context) => Text(

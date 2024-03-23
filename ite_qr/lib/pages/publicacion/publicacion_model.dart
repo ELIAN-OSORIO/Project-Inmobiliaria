@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/navbar/navbar_widget.dart';
-import 'inicio_widget.dart' show InicioWidget;
+import 'publicacion_widget.dart' show PublicacionWidget;
 import 'package:flutter/material.dart';
 
-class InicioModel extends FlutterFlowModel<InicioWidget> {
+class PublicacionModel extends FlutterFlowModel<PublicacionWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -11,12 +11,14 @@ class InicioModel extends FlutterFlowModel<InicioWidget> {
   late NavbarModel navbarModel1;
   // Model for Navbar component.
   late NavbarModel navbarModel2;
-  // Model for Navbar component.
-  late NavbarModel navbarModel3;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  // State field(s) for PageView widget.
+  PageController? pageViewController;
+
+  int get pageViewCurrentIndex => pageViewController != null &&
+          pageViewController!.hasClients &&
+          pageViewController!.page != null
+      ? pageViewController!.page!.round()
+      : 0;
 
   /// Initialization and disposal methods.
 
@@ -24,7 +26,6 @@ class InicioModel extends FlutterFlowModel<InicioWidget> {
   void initState(BuildContext context) {
     navbarModel1 = createModel(context, () => NavbarModel());
     navbarModel2 = createModel(context, () => NavbarModel());
-    navbarModel3 = createModel(context, () => NavbarModel());
   }
 
   @override
@@ -32,9 +33,6 @@ class InicioModel extends FlutterFlowModel<InicioWidget> {
     unfocusNode.dispose();
     navbarModel1.dispose();
     navbarModel2.dispose();
-    navbarModel3.dispose();
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
   }
 
   /// Action blocks are added here.

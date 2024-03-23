@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/navbar/navbar_widget.dart';
-import 'inicio_widget.dart' show InicioWidget;
+import 'buscando_widget.dart' show BuscandoWidget;
 import 'package:flutter/material.dart';
 
-class InicioModel extends FlutterFlowModel<InicioWidget> {
+class BuscandoModel extends FlutterFlowModel<BuscandoWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

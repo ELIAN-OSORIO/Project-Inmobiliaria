@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_button_tabbar.dart';
@@ -16,33 +15,39 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'formulario_model.dart';
-export 'formulario_model.dart';
+import 'formulario_editar_model.dart';
+export 'formulario_editar_model.dart';
 
-class FormularioWidget extends StatefulWidget {
-  const FormularioWidget({super.key});
+class FormularioEditarWidget extends StatefulWidget {
+  const FormularioEditarWidget({
+    super.key,
+    this.propiedadRef,
+  });
+
+  final PropiedadesRecord? propiedadRef;
 
   @override
-  State<FormularioWidget> createState() => _FormularioWidgetState();
+  State<FormularioEditarWidget> createState() => _FormularioEditarWidgetState();
 }
 
-class _FormularioWidgetState extends State<FormularioWidget>
+class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
     with TickerProviderStateMixin {
-  late FormularioModel _model;
+  late FormularioEditarModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => FormularioModel());
+    _model = createModel(context, () => FormularioEditarModel());
 
     _model.tabBarController = TabController(
       vsync: this,
       length: 3,
       initialIndex: 0,
     )..addListener(() => setState(() {}));
-    _model.paisController ??= TextEditingController();
+    _model.paisController ??=
+        TextEditingController(text: widget.propiedadRef?.pais);
     _model.paisFocusNode ??= FocusNode();
 
     _model.cpController ??= TextEditingController();
@@ -94,7 +99,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
   @override
   Widget build(BuildContext context) {
     return Title(
-        title: 'Formulario',
+        title: 'FormularioEditar',
         color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
         child: GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
@@ -313,7 +318,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                         ],
                                                       ),
                                                       child: Form(
-                                                        key: _model.formKey2,
+                                                        key: _model.formKey3,
                                                         autovalidateMode:
                                                             AutovalidateMode
                                                                 .disabled,
@@ -2832,7 +2837,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                 .circular(6.0),
                                                       ),
                                                       child: Form(
-                                                        key: _model.formKey3,
+                                                        key: _model.formKey2,
                                                         autovalidateMode:
                                                             AutovalidateMode
                                                                 .disabled,
@@ -3643,8 +3648,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                           FFButtonWidget(
                                                                         onPressed:
                                                                             () async {
-                                                                          if (_model.formKey2.currentState == null ||
-                                                                              !_model.formKey2.currentState!.validate()) {
+                                                                          if (_model.formKey3.currentState == null ||
+                                                                              !_model.formKey3.currentState!.validate()) {
                                                                             return;
                                                                           }
                                                                           if (_model.formKey1.currentState == null ||
@@ -3652,6 +3657,12 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             return;
                                                                           }
                                                                           if (_model.uploadedFileUrl1.isEmpty) {
+                                                                            setState(() {
+                                                                              _model.isDataUploading1 = false;
+                                                                              _model.uploadedLocalFile1 = FFUploadedFile(bytes: Uint8List.fromList([]));
+                                                                              _model.uploadedFileUrl1 = '';
+                                                                            });
+
                                                                             return;
                                                                           }
                                                                           if (_model.propieadad2Value ==
@@ -3677,8 +3688,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               null) {
                                                                             return;
                                                                           }
-                                                                          if (_model.formKey3.currentState == null ||
-                                                                              !_model.formKey3.currentState!.validate()) {
+                                                                          if (_model.formKey2.currentState == null ||
+                                                                              !_model.formKey2.currentState!.validate()) {
                                                                             return;
                                                                           }
                                                                           if (_model.mascotasValue ==
@@ -3686,57 +3697,10 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             return;
                                                                           }
 
-                                                                          await PropiedadesRecord
-                                                                              .collection
-                                                                              .doc()
-                                                                              .set({
-                                                                            ...createPropiedadesRecordData(
-                                                                              owner: currentUserReference,
-                                                                              pais: _model.paisController.text,
-                                                                              codigoPostal: _model.cpController.text,
-                                                                              estado: _model.estadoController.text,
-                                                                              municipio: _model.municipioController.text,
-                                                                              colonia: _model.coloniaController.text,
-                                                                              calle: _model.calleController.text,
-                                                                              numExtInt: _model.numintextController.text,
-                                                                              tipoPropiedad1: _model.propieadad2Value,
-                                                                              cuentaDormitorios: _model.dormitoriosValue,
-                                                                              cuentaCocina: _model.cocinaValue,
-                                                                              cuentaSala: _model.salaValue,
-                                                                              cuentaGaraje: _model.garajeValue,
-                                                                              cuentaBanos: _model.banosValue,
-                                                                              cuentaPatio: _model.patiosValue,
-                                                                              cuentaPisos: _model.pisosValue,
-                                                                              metrosCuadrados: int.tryParse(_model.metroscuadradosController.text),
-                                                                              infoExtra: _model.infoextraController.text,
-                                                                              mascotas: _model.mascotasValue,
-                                                                              contactoNombre: _model.contactonombreController.text,
-                                                                              contactoNumero: valueOrDefault<String>(
-                                                                                _model.contactocelularController1.text,
-                                                                                'XXX-XXX-XXXX',
-                                                                              ),
-                                                                              oferta: _model.tipodeofertaValue,
-                                                                              idPropiedad: currentUserReference?.id,
-                                                                              propiedadImagenes: _model.uploadedFileUrl1,
-                                                                              propiedadPrecio: _model.preciofinalController.text,
-                                                                              propiedadPrecioPago: _model.pagomensualunicoValue,
-                                                                              propiedadImg1: _model.uploadedFileUrl2,
-                                                                              propiedadImg2: _model.uploadedFileUrl3,
-                                                                              propiedadImg3: _model.uploadedFileUrl4,
-                                                                              propiedadImg4: _model.uploadedFileUrl5,
-                                                                              contactoCorreo: valueOrDefault<String>(
-                                                                                _model.contactocelularController2.text,
-                                                                                'XXX-XXX-XXXX',
-                                                                              ),
-                                                                              propiedadPrecio2: double.tryParse(_model.preciofinalController.text),
-                                                                            ),
-                                                                            ...mapToFirestore(
-                                                                              {
-                                                                                'created_at': FieldValue.serverTimestamp(),
-                                                                                'modified_at': FieldValue.serverTimestamp(),
-                                                                              },
-                                                                            ),
-                                                                          });
+                                                                          await widget
+                                                                              .propiedadRef!
+                                                                              .reference
+                                                                              .update(createPropiedadesRecordData());
 
                                                                           context
                                                                               .pushNamed('Publicaciones');

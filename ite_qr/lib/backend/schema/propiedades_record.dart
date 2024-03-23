@@ -10,9 +10,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class PropiedadesRecord extends FirestoreRecord {
   PropiedadesRecord._(
-    DocumentReference reference,
-    Map<String, dynamic> data,
-  ) : super(reference, data) {
+    super.reference,
+    super.data,
+  ) {
     _initializeFields();
   }
 
@@ -156,6 +156,51 @@ class PropiedadesRecord extends FirestoreRecord {
   String get mascotas => _mascotas ?? '';
   bool hasMascotas() => _mascotas != null;
 
+  // "propiedad_nombre" field.
+  String? _propiedadNombre;
+  String get propiedadNombre => _propiedadNombre ?? '';
+  bool hasPropiedadNombre() => _propiedadNombre != null;
+
+  // "propiedad_precio_pago" field.
+  String? _propiedadPrecioPago;
+  String get propiedadPrecioPago => _propiedadPrecioPago ?? '';
+  bool hasPropiedadPrecioPago() => _propiedadPrecioPago != null;
+
+  // "propiedad_img1" field.
+  String? _propiedadImg1;
+  String get propiedadImg1 => _propiedadImg1 ?? '';
+  bool hasPropiedadImg1() => _propiedadImg1 != null;
+
+  // "propiedad_img2" field.
+  String? _propiedadImg2;
+  String get propiedadImg2 => _propiedadImg2 ?? '';
+  bool hasPropiedadImg2() => _propiedadImg2 != null;
+
+  // "propiedad_img3" field.
+  String? _propiedadImg3;
+  String get propiedadImg3 => _propiedadImg3 ?? '';
+  bool hasPropiedadImg3() => _propiedadImg3 != null;
+
+  // "propiedad_img4" field.
+  String? _propiedadImg4;
+  String get propiedadImg4 => _propiedadImg4 ?? '';
+  bool hasPropiedadImg4() => _propiedadImg4 != null;
+
+  // "contacto_correo" field.
+  String? _contactoCorreo;
+  String get contactoCorreo => _contactoCorreo ?? '';
+  bool hasContactoCorreo() => _contactoCorreo != null;
+
+  // "propiedad_precio2" field.
+  double? _propiedadPrecio2;
+  double get propiedadPrecio2 => _propiedadPrecio2 ?? 0.0;
+  bool hasPropiedadPrecio2() => _propiedadPrecio2 != null;
+
+  // "propiedad_tipo" field.
+  List<String>? _propiedadTipo;
+  List<String> get propiedadTipo => _propiedadTipo ?? const [];
+  bool hasPropiedadTipo() => _propiedadTipo != null;
+
   void _initializeFields() {
     _owner = snapshotData['owner'] as DocumentReference?;
     _createdAt = snapshotData['created_at'] as DateTime?;
@@ -185,6 +230,15 @@ class PropiedadesRecord extends FirestoreRecord {
     _idPropiedad = snapshotData['id_propiedad'] as String?;
     _propiedadPrecio = snapshotData['propiedad_precio'] as String?;
     _mascotas = snapshotData['mascotas'] as String?;
+    _propiedadNombre = snapshotData['propiedad_nombre'] as String?;
+    _propiedadPrecioPago = snapshotData['propiedad_precio_pago'] as String?;
+    _propiedadImg1 = snapshotData['propiedad_img1'] as String?;
+    _propiedadImg2 = snapshotData['propiedad_img2'] as String?;
+    _propiedadImg3 = snapshotData['propiedad_img3'] as String?;
+    _propiedadImg4 = snapshotData['propiedad_img4'] as String?;
+    _contactoCorreo = snapshotData['contacto_correo'] as String?;
+    _propiedadPrecio2 = castToType<double>(snapshotData['propiedad_precio2']);
+    _propiedadTipo = getDataList(snapshotData['propiedad_tipo']);
   }
 
   static CollectionReference get collection =>
@@ -250,6 +304,14 @@ Map<String, dynamic> createPropiedadesRecordData({
   String? idPropiedad,
   String? propiedadPrecio,
   String? mascotas,
+  String? propiedadNombre,
+  String? propiedadPrecioPago,
+  String? propiedadImg1,
+  String? propiedadImg2,
+  String? propiedadImg3,
+  String? propiedadImg4,
+  String? contactoCorreo,
+  double? propiedadPrecio2,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -281,6 +343,14 @@ Map<String, dynamic> createPropiedadesRecordData({
       'id_propiedad': idPropiedad,
       'propiedad_precio': propiedadPrecio,
       'mascotas': mascotas,
+      'propiedad_nombre': propiedadNombre,
+      'propiedad_precio_pago': propiedadPrecioPago,
+      'propiedad_img1': propiedadImg1,
+      'propiedad_img2': propiedadImg2,
+      'propiedad_img3': propiedadImg3,
+      'propiedad_img4': propiedadImg4,
+      'contacto_correo': contactoCorreo,
+      'propiedad_precio2': propiedadPrecio2,
     }.withoutNulls,
   );
 
@@ -292,6 +362,7 @@ class PropiedadesRecordDocumentEquality implements Equality<PropiedadesRecord> {
 
   @override
   bool equals(PropiedadesRecord? e1, PropiedadesRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.owner == e2?.owner &&
         e1?.createdAt == e2?.createdAt &&
         e1?.modifiedAt == e2?.modifiedAt &&
@@ -319,7 +390,16 @@ class PropiedadesRecordDocumentEquality implements Equality<PropiedadesRecord> {
         e1?.oferta == e2?.oferta &&
         e1?.idPropiedad == e2?.idPropiedad &&
         e1?.propiedadPrecio == e2?.propiedadPrecio &&
-        e1?.mascotas == e2?.mascotas;
+        e1?.mascotas == e2?.mascotas &&
+        e1?.propiedadNombre == e2?.propiedadNombre &&
+        e1?.propiedadPrecioPago == e2?.propiedadPrecioPago &&
+        e1?.propiedadImg1 == e2?.propiedadImg1 &&
+        e1?.propiedadImg2 == e2?.propiedadImg2 &&
+        e1?.propiedadImg3 == e2?.propiedadImg3 &&
+        e1?.propiedadImg4 == e2?.propiedadImg4 &&
+        e1?.contactoCorreo == e2?.contactoCorreo &&
+        e1?.propiedadPrecio2 == e2?.propiedadPrecio2 &&
+        listEquality.equals(e1?.propiedadTipo, e2?.propiedadTipo);
   }
 
   @override
@@ -351,7 +431,16 @@ class PropiedadesRecordDocumentEquality implements Equality<PropiedadesRecord> {
         e?.oferta,
         e?.idPropiedad,
         e?.propiedadPrecio,
-        e?.mascotas
+        e?.mascotas,
+        e?.propiedadNombre,
+        e?.propiedadPrecioPago,
+        e?.propiedadImg1,
+        e?.propiedadImg2,
+        e?.propiedadImg3,
+        e?.propiedadImg4,
+        e?.contactoCorreo,
+        e?.propiedadPrecio2,
+        e?.propiedadTipo
       ]);
 
   @override
