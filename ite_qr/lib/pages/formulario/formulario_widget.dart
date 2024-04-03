@@ -3126,7 +3126,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                           Icons
                                                                               .money_off),
                                                                       ChipData(
-                                                                          'Ambas',
+                                                                          'Venta/Renta',
                                                                           Icons
                                                                               .bedroom_parent),
                                                                       ChipData(

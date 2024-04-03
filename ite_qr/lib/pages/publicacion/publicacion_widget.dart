@@ -715,42 +715,57 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          4.0, 2.0, 0.0, 0.0),
-                                                  child: Container(
-                                                    width: 123.0,
-                                                    height: 32.0,
-                                                    decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2.0),
-                                                      shape: BoxShape.rectangle,
-                                                      border: Border.all(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .primaryBackground,
-                                                        width: 1.0,
-                                                      ),
-                                                    ),
-                                                    child: Align(
-                                                      alignment:
-                                                          const AlignmentDirectional(
-                                                              0.0, 0.0),
-                                                      child: Text(
-                                                        valueOrDefault<String>(
-                                                          widget.propiedadRef
-                                                              ?.tipoPropiedad1,
-                                                          'Propiedad',
-                                                        ),
-                                                        style:
+                                                Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(4.0, 2.0,
+                                                                0.0, 0.0),
+                                                    child: Container(
+                                                      width: 123.0,
+                                                      height: 32.0,
+                                                      decoration: BoxDecoration(
+                                                        color:
                                                             FlutterFlowTheme.of(
                                                                     context)
+                                                                .secondaryText,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2.0),
+                                                        shape:
+                                                            BoxShape.rectangle,
+                                                        border: Border.all(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryBackground,
+                                                          width: 1.0,
+                                                        ),
+                                                      ),
+                                                      child: Align(
+                                                        alignment:
+                                                            const AlignmentDirectional(
+                                                                0.0, 0.0),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      1.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            valueOrDefault<
+                                                                String>(
+                                                              widget
+                                                                  .propiedadRef
+                                                                  ?.tipoPropiedad1,
+                                                              'Propiedad',
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
@@ -762,6 +777,8 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                                                       FontWeight
                                                                           .w600,
                                                                 ),
+                                                          ),
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -777,7 +794,7 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .primary,
+                                                              .success,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               2.0),
@@ -909,13 +926,42 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(4.0, 4.0,
                                                                 0.0, 0.0),
-                                                    child: Icon(
-                                                      Icons.qr_code,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryText,
-                                                      size: 28.0,
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        context.pushNamed(
+                                                          'QR',
+                                                          queryParameters: {
+                                                            'propiedadRef':
+                                                                serializeParam(
+                                                              widget
+                                                                  .propiedadRef,
+                                                              ParamType
+                                                                  .Document,
+                                                            ),
+                                                          }.withoutNulls,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            'propiedadRef': widget
+                                                                .propiedadRef,
+                                                          },
+                                                        );
+                                                      },
+                                                      child: Icon(
+                                                        Icons.qr_code,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 28.0,
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
@@ -1517,6 +1563,12 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                           ),
+                                                                    ),
+                                                                    const Row(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      children: [],
                                                                     ),
                                                                   ],
                                                                 ),
@@ -2654,8 +2706,7 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                                       Text(
                                                         valueOrDefault<String>(
                                                           widget.propiedadRef
-                                                              ?.propiedadPrecio2
-                                                              .toString(),
+                                                              ?.propiedadPrecio,
                                                           '0',
                                                         ),
                                                         style:
@@ -2683,7 +2734,7 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                                                       0.0,
                                                                       0.0),
                                                           child: Text(
-                                                            'MXN',
+                                                            ' MXN',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyMedium
@@ -2708,7 +2759,7 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                                             const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Icon(
-                                                          Icons.more,
+                                                          Icons.sell,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryText,
@@ -3092,40 +3143,50 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                                             const AlignmentDirectional(
                                                                 0.0, 0.0),
                                                         child: Container(
-                                                          width: 178.0,
-                                                          height: 106.0,
+                                                          width: 142.0,
+                                                          height: 107.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
                                                                 .secondaryBackground,
                                                           ),
-                                                          child: BarcodeWidget(
-                                                            data:
-                                                                'https://ite-qr-28vrnz.flutterflow.app/Publicacion?propiedadRef=${widget.propiedadRef?.reference.id}',
-                                                            barcode: Barcode
-                                                                .qrCode(),
-                                                            width: 300.0,
-                                                            height: 110.0,
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .primaryText,
-                                                            backgroundColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            errorBuilder:
-                                                                (context,
-                                                                        error) =>
-                                                                    const SizedBox(
+                                                          child: Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        2.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child:
+                                                                BarcodeWidget(
+                                                              data:
+                                                                  'https://ite-qr-28vrnz.flutterflow.app/Publicacion?propiedadRef=${widget.propiedadRef?.reference.id}',
+                                                              barcode: Barcode
+                                                                  .qrCode(),
                                                               width: 300.0,
                                                               height: 110.0,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primaryText,
+                                                              backgroundColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              errorBuilder:
+                                                                  (context,
+                                                                          error) =>
+                                                                      const SizedBox(
+                                                                width: 300.0,
+                                                                height: 110.0,
+                                                              ),
+                                                              drawText: false,
                                                             ),
-                                                            drawText: false,
                                                           ),
                                                         ),
                                                       ),
                                                       SizedBox(
-                                                        height: 100.0,
+                                                        height: 105.0,
                                                         child: VerticalDivider(
                                                           thickness: 1.0,
                                                           color: FlutterFlowTheme
@@ -3207,25 +3268,34 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                                                       const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      widget
-                                                                          .propiedadRef
-                                                                          ?.contactoNombre,
-                                                                      'Nombre',
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            2.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        widget
+                                                                            .propiedadRef
+                                                                            ?.contactoNombre,
+                                                                        'Nombre',
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Plus Jakarta Sans',
+                                                                            fontSize:
+                                                                                12.0,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                          ),
                                                                     ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Plus Jakarta Sans',
-                                                                          fontSize:
-                                                                              12.0,
-                                                                          fontWeight:
-                                                                              FontWeight.bold,
-                                                                        ),
                                                                   ),
                                                                 ),
                                                                 Align(
@@ -3282,25 +3352,34 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                                                       const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      widget
-                                                                          .propiedadRef
-                                                                          ?.contactoNumero,
-                                                                      '0',
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            2.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        widget
+                                                                            .propiedadRef
+                                                                            ?.contactoNumero,
+                                                                        '0',
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Plus Jakarta Sans',
+                                                                            fontSize:
+                                                                                12.0,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                          ),
                                                                     ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Plus Jakarta Sans',
-                                                                          fontSize:
-                                                                              12.0,
-                                                                          fontWeight:
-                                                                              FontWeight.bold,
-                                                                        ),
                                                                   ),
                                                                 ),
                                                                 Align(
@@ -3357,25 +3436,34 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                                                                       const AlignmentDirectional(
                                                                           -1.0,
                                                                           -1.0),
-                                                                  child: Text(
-                                                                    valueOrDefault<
-                                                                        String>(
-                                                                      widget
-                                                                          .propiedadRef
-                                                                          ?.contactoCorreo,
-                                                                      '0',
+                                                                  child:
+                                                                      Padding(
+                                                                    padding: const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            2.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child: Text(
+                                                                      valueOrDefault<
+                                                                          String>(
+                                                                        widget
+                                                                            .propiedadRef
+                                                                            ?.contactoCorreo,
+                                                                        '0',
+                                                                      ),
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Plus Jakarta Sans',
+                                                                            fontSize:
+                                                                                12.0,
+                                                                            fontWeight:
+                                                                                FontWeight.bold,
+                                                                          ),
                                                                     ),
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .bodyMedium
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Plus Jakarta Sans',
-                                                                          fontSize:
-                                                                              12.0,
-                                                                          fontWeight:
-                                                                              FontWeight.bold,
-                                                                        ),
                                                                   ),
                                                                 ),
                                                               ],

@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/navbar/navbar_widget.dart';
-import 'publicaciones_widget.dart' show PublicacionesWidget;
+import 'qr_widget.dart' show QrWidget;
 import 'package:flutter/material.dart';
 
-class PublicacionesModel extends FlutterFlowModel<PublicacionesWidget> {
+class QrModel extends FlutterFlowModel<QrWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -11,10 +11,6 @@ class PublicacionesModel extends FlutterFlowModel<PublicacionesWidget> {
   late NavbarModel navbarModel1;
   // Model for Navbar component.
   late NavbarModel navbarModel2;
-  // State field(s) for TabBar widget.
-  TabController? tabBarController;
-  int get tabBarCurrentIndex =>
-      tabBarController != null ? tabBarController!.index : 0;
 
   /// Initialization and disposal methods.
 
@@ -29,7 +25,6 @@ class PublicacionesModel extends FlutterFlowModel<PublicacionesWidget> {
     unfocusNode.dispose();
     navbarModel1.dispose();
     navbarModel2.dispose();
-    tabBarController?.dispose();
   }
 
   /// Action blocks are added here.

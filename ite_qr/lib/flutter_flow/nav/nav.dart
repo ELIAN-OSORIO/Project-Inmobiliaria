@@ -154,6 +154,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 propiedadRef:
                     params.getParam('propiedadRef', ParamType.Document),
               ),
+            ),
+            FFRoute(
+              name: 'QR',
+              path: 'QR',
+              asyncParams: {
+                'propiedadRef':
+                    getDoc(['propiedades'], PropiedadesRecord.fromSnapshot),
+              },
+              builder: (context, params) => QrWidget(
+                propiedadRef:
+                    params.getParam('propiedadRef', ParamType.Document),
+                scannedValue: params.getParam('scannedValue', ParamType.String),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

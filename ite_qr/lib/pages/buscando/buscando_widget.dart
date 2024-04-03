@@ -513,14 +513,7 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                   0.0, 1.0, 0.0, 0.0),
                                           child: StreamBuilder<
                                               List<PropiedadesRecord>>(
-                                            stream: queryPropiedadesRecord(
-                                              queryBuilder:
-                                                  (propiedadesRecord) =>
-                                                      propiedadesRecord.where(
-                                                'municipio',
-                                                isNotEqualTo: widget.search,
-                                              ),
-                                            ),
+                                            stream: queryPropiedadesRecord(),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
                                               if (!snapshot.hasData) {
