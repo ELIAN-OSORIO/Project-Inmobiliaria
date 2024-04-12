@@ -101,6 +101,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               fontSize: 20.0,
+                              letterSpacing: 0.0,
                             ),
                       ),
                     ),
@@ -153,7 +154,10 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
-                                    offset: Offset(0.0, 2.0),
+                                    offset: Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
                                   )
                                 ],
                               ),
@@ -193,7 +197,12 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                   currentUserEmail,
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                                 ),
                                               ),
                                               Align(
@@ -207,7 +216,12 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                         ''),
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                 ),
                                               ),
@@ -339,6 +353,12 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                                                   child: Container(
                                                     width: 150.0,
                                                     height: 137.0,
+                                                    constraints: const BoxConstraints(
+                                                      minWidth: 120.0,
+                                                      minHeight: 120.0,
+                                                      maxWidth: 1500.0,
+                                                      maxHeight: 1500.0,
+                                                    ),
                                                     decoration: BoxDecoration(
                                                       color:
                                                           FlutterFlowTheme.of(

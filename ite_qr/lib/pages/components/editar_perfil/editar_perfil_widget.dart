@@ -72,7 +72,10 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                       BoxShadow(
                         blurRadius: 12.0,
                         color: Color(0x33000000),
-                        offset: Offset(0.0, 5.0),
+                        offset: Offset(
+                          0.0,
+                          5.0,
+                        ),
                       )
                     ],
                     borderRadius: BorderRadius.circular(12.0),
@@ -134,7 +137,11 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                                         builder: (context) => Text(
                                           currentUserDisplayName,
                                           style: FlutterFlowTheme.of(context)
-                                              .headlineSmall,
+                                              .headlineSmall
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                       Padding(
@@ -150,6 +157,7 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 fontSize: 14.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                         ),
@@ -187,8 +195,12 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                                       24.0, 12.0, 0.0, 12.0),
                                   child: Text(
                                     'Configuración',
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                               ],
@@ -235,6 +247,7 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 fontSize: 14.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                         ),
@@ -287,6 +300,7 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
                                                 fontSize: 14.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.normal,
                                               ),
                                         ),
@@ -332,7 +346,11 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                                         child: Text(
                                           'Edit Profile',
                                           style: FlutterFlowTheme.of(context)
-                                              .labelMedium,
+                                              .labelMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                       Icon(
@@ -380,6 +398,7 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 14.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
                                           ),
                                       elevation: 0.0,

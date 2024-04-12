@@ -164,7 +164,10 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                               BoxShadow(
                                                 blurRadius: 3.0,
                                                 color: Color(0x39000000),
-                                                offset: Offset(0.0, 2.0),
+                                                offset: Offset(
+                                                  0.0,
+                                                  2.0,
+                                                ),
                                               )
                                             ],
                                           ),
@@ -213,6 +216,8 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                         ),
                                                       ],
@@ -241,6 +246,8 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryBackground,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w300,
@@ -304,6 +311,8 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                             'Plus Jakarta Sans',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .tertiary,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                                   enabledBorder:
                                                                       OutlineInputBorder(
@@ -375,6 +384,8 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .tertiary,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                     ),
                                                                 validator: _model
                                                                     .textControllerValidator
@@ -444,6 +455,8 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                           'Plus Jakarta Sans',
                                                                       color: Colors
                                                                           .white,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                     ),
                                                                 elevation: 2.0,
                                                                 borderSide:
@@ -494,6 +507,7 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           fontSize: 22.0,
+                                                          letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.w800,
                                                         ),
@@ -567,7 +581,9 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                             color: Color(
                                                                 0x32000000),
                                                             offset: Offset(
-                                                                0.0, 2.0),
+                                                              0.0,
+                                                              2.0,
+                                                            ),
                                                           )
                                                         ],
                                                         borderRadius:
@@ -625,7 +641,7 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                 borderRadius:
                                                                     BorderRadius
                                                                         .circular(
-                                                                            2.0),
+                                                                            4.0),
                                                                 child:
                                                                     CachedNetworkImage(
                                                                   fadeInDuration:
@@ -707,6 +723,7 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -754,6 +771,7 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -927,6 +945,8 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                                 'Plus Jakarta Sans',
                                                                             fontSize:
                                                                                 20.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -954,6 +974,8 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                                 'Plus Jakarta Sans',
                                                                             fontSize:
                                                                                 22.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w900,
                                                                           ),
@@ -976,6 +998,8 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                                 'Plus Jakarta Sans',
                                                                             fontSize:
                                                                                 20.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                           ),
                                                                     ),
                                                                   ),
@@ -1002,7 +1026,10 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                             child:
                                                                                 Text(
                                                                               dateTimeFormat('yMd', listViewPropiedadesRecord.createdAt!),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
                                                                             ),
                                                                           ),
                                                                         ],
@@ -1055,28 +1082,40 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                 child: Text(
                                                                                   listViewPropiedadesRecord.estado,
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                 ),
                                                                               ),
                                                                               Align(
                                                                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                 child: Text(
                                                                                   ',',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                 ),
                                                                               ),
                                                                               Align(
                                                                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                 child: Text(
                                                                                   listViewPropiedadesRecord.municipio,
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                 ),
                                                                               ),
                                                                               Align(
                                                                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                 child: Text(
                                                                                   ',',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                 ),
                                                                               ),
                                                                             ],
@@ -1105,28 +1144,40 @@ class _BuscandoWidgetState extends State<BuscandoWidget> {
                                                                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                 child: Text(
                                                                                   listViewPropiedadesRecord.colonia,
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                 ),
                                                                               ),
                                                                               Align(
                                                                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                 child: Text(
                                                                                   ',',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                 ),
                                                                               ),
                                                                               Align(
                                                                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                 child: Text(
                                                                                   listViewPropiedadesRecord.calle,
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                 ),
                                                                               ),
                                                                               Align(
                                                                                 alignment: const AlignmentDirectional(0.0, -1.0),
                                                                                 child: Text(
                                                                                   '.',
-                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                 ),
                                                                               ),
                                                                             ],

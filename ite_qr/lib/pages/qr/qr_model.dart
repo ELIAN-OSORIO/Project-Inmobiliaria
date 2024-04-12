@@ -12,8 +12,6 @@ class QrModel extends FlutterFlowModel<QrWidget> {
   // Model for Navbar component.
   late NavbarModel navbarModel2;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     navbarModel1 = createModel(context, () => NavbarModel());
@@ -26,8 +24,4 @@ class QrModel extends FlutterFlowModel<QrWidget> {
     navbarModel1.dispose();
     navbarModel2.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

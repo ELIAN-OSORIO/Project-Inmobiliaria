@@ -50,40 +50,52 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
         TextEditingController(text: widget.propiedadRef?.pais);
     _model.paisFocusNode ??= FocusNode();
 
-    _model.cpController ??= TextEditingController();
+    _model.cpController ??=
+        TextEditingController(text: widget.propiedadRef?.codigoPostal);
     _model.cpFocusNode ??= FocusNode();
 
-    _model.estadoController ??= TextEditingController();
+    _model.estadoController ??=
+        TextEditingController(text: widget.propiedadRef?.estado);
     _model.estadoFocusNode ??= FocusNode();
 
-    _model.municipioController ??= TextEditingController();
+    _model.municipioController ??=
+        TextEditingController(text: widget.propiedadRef?.municipio);
     _model.municipioFocusNode ??= FocusNode();
 
-    _model.coloniaController ??= TextEditingController();
+    _model.coloniaController ??=
+        TextEditingController(text: widget.propiedadRef?.colonia);
     _model.coloniaFocusNode ??= FocusNode();
 
-    _model.calleController ??= TextEditingController();
+    _model.calleController ??=
+        TextEditingController(text: widget.propiedadRef?.calle);
     _model.calleFocusNode ??= FocusNode();
 
-    _model.numintextController ??= TextEditingController();
+    _model.numintextController ??=
+        TextEditingController(text: widget.propiedadRef?.numExtInt);
     _model.numintextFocusNode ??= FocusNode();
 
-    _model.metroscuadradosController ??= TextEditingController();
+    _model.metroscuadradosController ??= TextEditingController(
+        text: widget.propiedadRef?.metrosCuadrados.toString());
     _model.metroscuadradosFocusNode ??= FocusNode();
 
-    _model.preciofinalController ??= TextEditingController();
+    _model.preciofinalController ??=
+        TextEditingController(text: widget.propiedadRef?.propiedadPrecio);
     _model.preciofinalFocusNode ??= FocusNode();
 
-    _model.infoextraController ??= TextEditingController();
+    _model.infoextraController ??=
+        TextEditingController(text: widget.propiedadRef?.infoExtra);
     _model.infoextraFocusNode ??= FocusNode();
 
-    _model.contactonombreController ??= TextEditingController();
+    _model.contactonombreController ??=
+        TextEditingController(text: widget.propiedadRef?.contactoNombre);
     _model.contactonombreFocusNode ??= FocusNode();
 
-    _model.contactocelularController1 ??= TextEditingController();
+    _model.contactocelularController1 ??=
+        TextEditingController(text: widget.propiedadRef?.contactoNumero);
     _model.contactocelularFocusNode1 ??= FocusNode();
 
-    _model.contactocelularController2 ??= TextEditingController();
+    _model.contactocelularController2 ??=
+        TextEditingController(text: widget.propiedadRef?.contactoCorreo);
     _model.contactocelularFocusNode2 ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -160,6 +172,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               fontSize: 20.0,
+                              letterSpacing: 0.0,
                             ),
                       ),
                     ),
@@ -212,7 +225,10 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
-                                    offset: Offset(0.0, 2.0),
+                                    offset: Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
                                   )
                                 ],
                               ),
@@ -227,6 +243,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                           .titleMedium
                                           .override(
                                             fontFamily: 'Plus Jakarta Sans',
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
                                       unselectedLabelStyle: const TextStyle(),
@@ -313,7 +330,9 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                                0.0, 2.0),
+                                                              0.0,
+                                                              2.0,
+                                                            ),
                                                           )
                                                         ],
                                                       ),
@@ -365,6 +384,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 18.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.bold,
                                                                               ),
                                                                         ),
@@ -390,6 +410,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -415,10 +436,18 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -463,7 +492,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .paisControllerValidator
                                                                             .asValidator(context),
@@ -489,6 +522,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -514,10 +548,18 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -562,7 +604,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .cpControllerValidator
                                                                             .asValidator(context),
@@ -588,6 +634,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -613,10 +660,18 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -661,7 +716,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .estadoControllerValidator
                                                                             .asValidator(context),
@@ -687,6 +746,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -712,10 +772,18 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -760,7 +828,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .municipioControllerValidator
                                                                             .asValidator(context),
@@ -786,6 +858,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -811,10 +884,18 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -859,7 +940,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .coloniaControllerValidator
                                                                             .asValidator(context),
@@ -885,6 +970,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -910,10 +996,18 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -958,7 +1052,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .calleControllerValidator
                                                                             .asValidator(context),
@@ -984,6 +1082,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -1009,10 +1108,18 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -1057,7 +1164,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         keyboardType:
                                                                             TextInputType.number,
                                                                         validator: _model
@@ -1071,6 +1182,65 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primaryText,
+                                                                    ),
+                                                                    Container(
+                                                                      width:
+                                                                          380.0,
+                                                                      height:
+                                                                          53.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            4.0,
+                                                                            0.0,
+                                                                            8.0,
+                                                                            0.0),
+                                                                        child:
+                                                                            FFButtonWidget(
+                                                                          onPressed:
+                                                                              () async {
+                                                                            context.safePop();
+                                                                          },
+                                                                          text:
+                                                                              'Cancelar',
+                                                                          options:
+                                                                              FFButtonOptions(
+                                                                            height:
+                                                                                40.0,
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                24.0,
+                                                                                0.0,
+                                                                                24.0,
+                                                                                0.0),
+                                                                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).error,
+                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                  fontFamily: 'Plus Jakarta Sans',
+                                                                                  color: Colors.white,
+                                                                                  letterSpacing: 0.0,
+                                                                                ),
+                                                                            elevation:
+                                                                                3.0,
+                                                                            borderSide:
+                                                                                const BorderSide(
+                                                                              color: Colors.transparent,
+                                                                              width: 1.0,
+                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
+                                                                          ),
+                                                                        ),
+                                                                      ),
                                                                     ),
                                                                   ],
                                                                 ),
@@ -1104,8 +1274,10 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                         blurRadius: 4.0,
                                                         color:
                                                             Color(0x33000000),
-                                                        offset:
-                                                            Offset(0.0, 2.0),
+                                                        offset: Offset(
+                                                          0.0,
+                                                          2.0,
+                                                        ),
                                                       )
                                                     ],
                                                   ),
@@ -1143,6 +1315,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                         'Plus Jakarta Sans',
                                                                     fontSize:
                                                                         18.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
@@ -1171,6 +1345,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                           'Plus Jakarta Sans',
                                                                       fontSize:
                                                                           14.0,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
@@ -1273,10 +1449,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(8.0),
                                                                                     child: Image.network(
-                                                                                      valueOrDefault<String>(
-                                                                                        _model.uploadedFileUrl1,
-                                                                                        'https://t4.ftcdn.net/jpg/04/81/13/43/360_F_481134373_0W4kg2yKeBRHNEklk4F9UXtGHdub3tYk.jpg',
-                                                                                      ),
+                                                                                      widget.propiedadRef!.propiedadImagenes,
                                                                                       width: 300.0,
                                                                                       height: 200.0,
                                                                                       fit: BoxFit.cover,
@@ -1341,10 +1514,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(8.0),
                                                                                     child: Image.network(
-                                                                                      valueOrDefault<String>(
-                                                                                        _model.uploadedFileUrl2,
-                                                                                        'https://t4.ftcdn.net/jpg/04/81/13/43/360_F_481134373_0W4kg2yKeBRHNEklk4F9UXtGHdub3tYk.jpg',
-                                                                                      ),
+                                                                                      widget.propiedadRef!.propiedadImg1,
                                                                                       width: 300.0,
                                                                                       height: 200.0,
                                                                                       fit: BoxFit.cover,
@@ -1409,10 +1579,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(8.0),
                                                                                     child: Image.network(
-                                                                                      valueOrDefault<String>(
-                                                                                        _model.uploadedFileUrl3,
-                                                                                        'https://t4.ftcdn.net/jpg/04/81/13/43/360_F_481134373_0W4kg2yKeBRHNEklk4F9UXtGHdub3tYk.jpg',
-                                                                                      ),
+                                                                                      widget.propiedadRef!.propiedadImg2,
                                                                                       width: 300.0,
                                                                                       height: 200.0,
                                                                                       fit: BoxFit.cover,
@@ -1477,10 +1644,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(8.0),
                                                                                     child: Image.network(
-                                                                                      valueOrDefault<String>(
-                                                                                        _model.uploadedFileUrl4,
-                                                                                        'https://t4.ftcdn.net/jpg/04/81/13/43/360_F_481134373_0W4kg2yKeBRHNEklk4F9UXtGHdub3tYk.jpg',
-                                                                                      ),
+                                                                                      widget.propiedadRef!.propiedadImg3,
                                                                                       width: 300.0,
                                                                                       height: 200.0,
                                                                                       fit: BoxFit.cover,
@@ -1553,10 +1717,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(8.0),
                                                                                     child: Image.network(
-                                                                                      valueOrDefault<String>(
-                                                                                        _model.uploadedFileUrl5,
-                                                                                        'https://t4.ftcdn.net/jpg/04/81/13/43/360_F_481134373_0W4kg2yKeBRHNEklk4F9UXtGHdub3tYk.jpg',
-                                                                                      ),
+                                                                                      widget.propiedadRef!.propiedadImg4,
                                                                                       width: 300.0,
                                                                                       height: 200.0,
                                                                                       fit: BoxFit.cover,
@@ -1642,6 +1803,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                 'Plus Jakarta Sans',
                                                                             fontSize:
                                                                                 14.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
                                                                           ),
@@ -1676,10 +1839,13 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                           0.0),
                                                                       child: FlutterFlowDropDown<
                                                                           String>(
-                                                                        controller: _model
-                                                                            .propieadad2ValueController ??= FormFieldController<
-                                                                                String>(
-                                                                            null),
+                                                                        controller:
+                                                                            _model.propieadad2ValueController ??=
+                                                                                FormFieldController<String>(
+                                                                          _model.propieadad2Value ??= widget
+                                                                              .propiedadRef
+                                                                              ?.tipoPropiedad1,
+                                                                        ),
                                                                         options: const [
                                                                           'Casa',
                                                                           'Departamento',
@@ -1693,8 +1859,12 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             374.0,
                                                                         height:
                                                                             56.0,
-                                                                        textStyle:
-                                                                            FlutterFlowTheme.of(context).bodyMedium,
+                                                                        textStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         hintText:
                                                                             'Selecciona ',
                                                                         icon:
@@ -1731,8 +1901,12 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             false,
                                                                         labelText:
                                                                             '',
-                                                                        labelTextStyle:
-                                                                            FlutterFlowTheme.of(context).labelMedium,
+                                                                        labelTextStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -1778,6 +1952,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -1842,10 +2017,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                     fontFamily: 'Urbanist',
                                                                                     fontSize: 20.0,
+                                                                                    letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
                                                                             count: _model.dormitoriosValue ??=
-                                                                                0,
+                                                                                widget.propiedadRef!.cuentaDormitorios,
                                                                             updateCount: (count) =>
                                                                                 setState(() => _model.dormitoriosValue = count),
                                                                             stepSize:
@@ -1887,6 +2063,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                   fontSize: 14.0,
+                                                                                  letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
                                                                                 ),
                                                                           ),
@@ -1939,9 +2116,10 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                   style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                         fontFamily: 'Urbanist',
                                                                                         fontSize: 20.0,
+                                                                                        letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
-                                                                                count: _model.cocinaValue ??= 0,
+                                                                                count: _model.cocinaValue ??= widget.propiedadRef!.cuentaCocina,
                                                                                 updateCount: (count) => setState(() => _model.cocinaValue = count),
                                                                                 stepSize: 1,
                                                                                 minimum: 0,
@@ -1994,6 +2172,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -2058,10 +2237,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                     fontFamily: 'Urbanist',
                                                                                     fontSize: 20.0,
+                                                                                    letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
                                                                             count: _model.salaValue ??=
-                                                                                0,
+                                                                                widget.propiedadRef!.cuentaSala,
                                                                             updateCount: (count) =>
                                                                                 setState(() => _model.salaValue = count),
                                                                             stepSize:
@@ -2103,6 +2283,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                   fontSize: 14.0,
+                                                                                  letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
                                                                                 ),
                                                                           ),
@@ -2155,9 +2336,10 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                   style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                         fontFamily: 'Urbanist',
                                                                                         fontSize: 20.0,
+                                                                                        letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
-                                                                                count: _model.garajeValue ??= 0,
+                                                                                count: _model.garajeValue ??= widget.propiedadRef!.cuentaGaraje,
                                                                                 updateCount: (count) => setState(() => _model.garajeValue = count),
                                                                                 stepSize: 1,
                                                                                 minimum: 0,
@@ -2210,6 +2392,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -2274,10 +2457,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                     fontFamily: 'Urbanist',
                                                                                     fontSize: 20.0,
+                                                                                    letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
                                                                             count: _model.banosValue ??=
-                                                                                0,
+                                                                                widget.propiedadRef!.cuentaBanos,
                                                                             updateCount: (count) =>
                                                                                 setState(() => _model.banosValue = count),
                                                                             stepSize:
@@ -2319,6 +2503,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                   fontSize: 14.0,
+                                                                                  letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
                                                                                 ),
                                                                           ),
@@ -2371,9 +2556,10 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                   style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                         fontFamily: 'Urbanist',
                                                                                         fontSize: 20.0,
+                                                                                        letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
-                                                                                count: _model.patiosValue ??= 0,
+                                                                                count: _model.patiosValue ??= widget.propiedadRef!.cuentaPatio,
                                                                                 updateCount: (count) => setState(() => _model.patiosValue = count),
                                                                                 stepSize: 1,
                                                                                 minimum: 0,
@@ -2426,6 +2612,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -2490,10 +2677,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                     fontFamily: 'Urbanist',
                                                                                     fontSize: 20.0,
+                                                                                    letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
                                                                             count: _model.pisosValue ??=
-                                                                                1,
+                                                                                widget.propiedadRef!.cuentaPisos,
                                                                             updateCount: (count) =>
                                                                                 setState(() => _model.pisosValue = count),
                                                                             stepSize:
@@ -2533,6 +2721,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -2580,8 +2769,14 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                 autofocus: true,
                                                                                 obscureText: false,
                                                                                 decoration: InputDecoration(
-                                                                                  labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                                                                                  hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                                                                                  labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
+                                                                                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                   enabledBorder: OutlineInputBorder(
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).alternate,
@@ -2612,7 +2807,10 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                   ),
                                                                                   filled: true,
                                                                                 ),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
                                                                                 keyboardType: TextInputType.number,
                                                                                 validator: _model.metroscuadradosControllerValidator.asValidator(context),
                                                                               ),
@@ -2670,6 +2868,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -2717,8 +2916,14 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               obscureText: false,
                                                                               decoration: InputDecoration(
                                                                                 labelText: 'MXN',
-                                                                                labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                                                                                hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                                                                                labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
                                                                                 enabledBorder: OutlineInputBorder(
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).alternate,
@@ -2749,7 +2954,10 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                 ),
                                                                                 filled: true,
                                                                               ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
                                                                               keyboardType: TextInputType.number,
                                                                               validator: _model.preciofinalControllerValidator.asValidator(context),
                                                                             ),
@@ -2763,14 +2971,23 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                           ].toList(),
                                                                           onChanged: (val) =>
                                                                               setState(() {}),
-                                                                          controller: _model.pagomensualunicoValueController ??=
-                                                                              FormFieldController<String>(null),
+                                                                          controller: _model.pagomensualunicoValueController ??= FormFieldController<String>(widget
+                                                                              .propiedadRef!
+                                                                              .propiedadPrecioPago),
                                                                           optionHeight:
                                                                               32.0,
-                                                                          textStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          selectedTextStyle:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                          textStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          selectedTextStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           buttonPosition:
                                                                               RadioButtonPosition.left,
                                                                           direction:
@@ -2829,7 +3046,9 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                                0.0, 2.0),
+                                                              0.0,
+                                                              2.0,
+                                                            ),
                                                           )
                                                         ],
                                                         borderRadius:
@@ -2872,6 +3091,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             'Plus Jakarta Sans',
                                                                         fontSize:
                                                                             18.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.bold,
                                                                       ),
@@ -2899,6 +3120,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
                                                                         ),
@@ -2925,12 +3148,24 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                       false,
                                                                   decoration:
                                                                       InputDecoration(
-                                                                    labelStyle:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                    labelStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     hintStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .labelMedium,
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     enabledBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
@@ -2986,7 +3221,13 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                   maxLines: 3,
                                                                   validator: _model
                                                                       .infoextraControllerValidator
@@ -3016,6 +3257,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
                                                                         ),
@@ -3046,15 +3289,29 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                       controller: _model
                                                                           .mascotasValueController ??= FormFieldController<
                                                                               String>(
-                                                                          null),
+                                                                          widget
+                                                                              .propiedadRef!
+                                                                              .mascotas),
                                                                       optionHeight:
                                                                           32.0,
-                                                                      textStyle:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelMedium,
-                                                                      selectedTextStyle:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMedium,
+                                                                      textStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Plus Jakarta Sans',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                      selectedTextStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Plus Jakarta Sans',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
                                                                       buttonPosition:
                                                                           RadioButtonPosition
                                                                               .left,
@@ -3102,6 +3359,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             'Plus Jakarta Sans',
                                                                         fontSize:
                                                                             18.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.bold,
                                                                       ),
@@ -3166,6 +3425,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             fontSize:
                                                                                 16.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                           ),
                                                                       iconColor:
                                                                           FlutterFlowTheme.of(context)
@@ -3193,6 +3454,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             fontSize:
                                                                                 16.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                           ),
                                                                       iconColor:
                                                                           FlutterFlowTheme.of(context)
@@ -3211,6 +3474,9 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                         12.0,
                                                                     multiselect:
                                                                         false,
+                                                                    initialized:
+                                                                        _model.tipodeofertaValue !=
+                                                                            null,
                                                                     alignment:
                                                                         WrapAlignment
                                                                             .start,
@@ -3218,7 +3484,11 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                             .tipodeofertaValueController ??=
                                                                         FormFieldController<
                                                                             List<String>>(
-                                                                      [],
+                                                                      [
+                                                                        widget
+                                                                            .propiedadRef!
+                                                                            .oferta
+                                                                      ],
                                                                     ),
                                                                     wrapped:
                                                                         true,
@@ -3256,6 +3526,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               18.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.bold,
                                                                         ),
@@ -3284,6 +3556,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
                                                                         ),
@@ -3313,12 +3587,24 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                       false,
                                                                   decoration:
                                                                       InputDecoration(
-                                                                    labelStyle:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                    labelStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     hintStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .labelMedium,
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     enabledBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
@@ -3376,7 +3662,13 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                   validator: _model
                                                                       .contactonombreControllerValidator
                                                                       .asValidator(
@@ -3405,6 +3697,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
                                                                         ),
@@ -3434,12 +3728,24 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                       false,
                                                                   decoration:
                                                                       InputDecoration(
-                                                                    labelStyle:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                    labelStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     hintStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .labelMedium,
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     enabledBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
@@ -3497,7 +3803,13 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                   validator: _model
                                                                       .contactocelularController1Validator
                                                                       .asValidator(
@@ -3526,6 +3838,8 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
                                                                         ),
@@ -3555,12 +3869,24 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                       false,
                                                                   decoration:
                                                                       InputDecoration(
-                                                                    labelStyle:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                    labelStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     hintStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .labelMedium,
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     enabledBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
@@ -3618,7 +3944,13 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                   validator: _model
                                                                       .contactocelularController2Validator
                                                                       .asValidator(
@@ -3648,65 +3980,69 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                           FFButtonWidget(
                                                                         onPressed:
                                                                             () async {
-                                                                          if (_model.formKey3.currentState == null ||
-                                                                              !_model.formKey3.currentState!.validate()) {
-                                                                            return;
-                                                                          }
-                                                                          if (_model.formKey1.currentState == null ||
-                                                                              !_model.formKey1.currentState!.validate()) {
-                                                                            return;
-                                                                          }
-                                                                          if (_model.uploadedFileUrl1.isEmpty) {
-                                                                            setState(() {
-                                                                              _model.isDataUploading1 = false;
-                                                                              _model.uploadedLocalFile1 = FFUploadedFile(bytes: Uint8List.fromList([]));
-                                                                              _model.uploadedFileUrl1 = '';
-                                                                            });
-
-                                                                            return;
-                                                                          }
-                                                                          if (_model.propieadad2Value ==
-                                                                              null) {
-                                                                            await showDialog(
-                                                                              context: context,
-                                                                              builder: (alertDialogContext) {
-                                                                                return AlertDialog(
-                                                                                  title: const Text('Error'),
-                                                                                  content: const Text('Falta llenar campos'),
-                                                                                  actions: [
-                                                                                    TextButton(
-                                                                                      onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                      child: const Text('Ok'),
-                                                                                    ),
-                                                                                  ],
-                                                                                );
-                                                                              },
-                                                                            );
-                                                                            return;
-                                                                          }
-                                                                          if (_model.pagomensualunicoValue ==
-                                                                              null) {
-                                                                            return;
-                                                                          }
-                                                                          if (_model.formKey2.currentState == null ||
-                                                                              !_model.formKey2.currentState!.validate()) {
-                                                                            return;
-                                                                          }
-                                                                          if (_model.mascotasValue ==
-                                                                              null) {
-                                                                            return;
-                                                                          }
-
                                                                           await widget
                                                                               .propiedadRef!
                                                                               .reference
-                                                                              .update(createPropiedadesRecordData());
-
+                                                                              .update({
+                                                                            ...createPropiedadesRecordData(
+                                                                              pais: _model.paisController.text,
+                                                                              codigoPostal: _model.cpController.text,
+                                                                              estado: _model.estadoController.text,
+                                                                              municipio: _model.municipioController.text,
+                                                                              colonia: _model.coloniaController.text,
+                                                                              calle: _model.calleController.text,
+                                                                              numExtInt: _model.numintextController.text,
+                                                                              tipoPropiedad1: _model.propieadad2Value,
+                                                                              cuentaDormitorios: _model.dormitoriosValue,
+                                                                              cuentaCocina: _model.cocinaValue,
+                                                                              cuentaSala: _model.salaValue,
+                                                                              cuentaGaraje: _model.garajeValue,
+                                                                              cuentaBanos: _model.banosValue,
+                                                                              cuentaPatio: _model.patiosValue,
+                                                                              cuentaPisos: _model.pisosValue,
+                                                                              metrosCuadrados: int.tryParse(_model.metroscuadradosController.text),
+                                                                              infoExtra: _model.infoextraController.text,
+                                                                              contactoNombre: _model.contactonombreController.text,
+                                                                              contactoNumero: _model.contactocelularController1.text,
+                                                                              propiedadImagenes: _model.uploadedFileUrl1,
+                                                                              oferta: _model.tipodeofertaValue,
+                                                                              propiedadPrecio: _model.preciofinalController.text,
+                                                                              mascotas: _model.mascotasValue,
+                                                                              propiedadPrecioPago: _model.pagomensualunicoValue,
+                                                                              propiedadImg1: _model.uploadedFileUrl2,
+                                                                              propiedadImg2: _model.uploadedFileUrl3,
+                                                                              propiedadImg3: _model.uploadedFileUrl4,
+                                                                              propiedadImg4: _model.uploadedFileUrl5,
+                                                                              contactoCorreo: _model.contactocelularController2.text,
+                                                                            ),
+                                                                            ...mapToFirestore(
+                                                                              {
+                                                                                'modified_at': FieldValue.serverTimestamp(),
+                                                                              },
+                                                                            ),
+                                                                          });
+                                                                          if (Navigator.of(context)
+                                                                              .canPop()) {
+                                                                            context.pop();
+                                                                          }
                                                                           context
-                                                                              .pushNamed('Publicaciones');
+                                                                              .pushNamed(
+                                                                            'Publicaciones',
+                                                                            queryParameters:
+                                                                                {
+                                                                              'propiedadRef': serializeParam(
+                                                                                widget.propiedadRef,
+                                                                                ParamType.Document,
+                                                                              ),
+                                                                            }.withoutNulls,
+                                                                            extra: <String,
+                                                                                dynamic>{
+                                                                              'propiedadRef': widget.propiedadRef,
+                                                                            },
+                                                                          );
                                                                         },
                                                                         text:
-                                                                            'Publicar',
+                                                                            'Guardar',
                                                                         options:
                                                                             FFButtonOptions(
                                                                           height:
@@ -3728,6 +4064,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 color: Colors.white,
+                                                                                letterSpacing: 0.0,
                                                                               ),
                                                                           elevation:
                                                                               3.0,

@@ -104,6 +104,7 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               fontSize: 20.0,
+                              letterSpacing: 0.0,
                             ),
                       ),
                     ),
@@ -156,7 +157,10 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
-                                    offset: Offset(0.0, 2.0),
+                                    offset: Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
                                   )
                                 ],
                               ),
@@ -196,7 +200,12 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                   currentUserEmail,
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                                 ),
                                               ),
                                               Align(
@@ -210,7 +219,12 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                     'Nombre:',
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                 ),
                                               ),
@@ -234,11 +248,23 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                       labelStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .labelMedium,
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Plus Jakarta Sans',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .labelMedium,
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Plus Jakarta Sans',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       enabledBorder:
                                                           OutlineInputBorder(
                                                         borderSide: BorderSide(
@@ -290,7 +316,12 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     validator: _model
                                                         .textControllerValidator
                                                         .asValidator(context),
@@ -410,6 +441,8 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                                     'Plus Jakarta Sans',
                                                                 color: Colors
                                                                     .white,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                       elevation: 3.0,
                                                       borderSide: const BorderSide(
@@ -435,7 +468,12 @@ class _PerfilEditarNombreWidgetState extends State<PerfilEditarNombreWidget> {
                                                         ''),
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                 ),
                                               ),

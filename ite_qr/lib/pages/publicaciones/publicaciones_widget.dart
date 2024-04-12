@@ -3,7 +3,6 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/components/navbar/navbar_widget.dart';
-import 'package:barcode_widget/barcode_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
@@ -112,6 +111,7 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               fontSize: 20.0,
+                              letterSpacing: 0.0,
                             ),
                       ),
                     ),
@@ -170,6 +170,7 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                             .titleSmall
                                             .override(
                                               fontFamily: 'Plus Jakarta Sans',
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w500,
                                             ),
                                         unselectedLabelStyle: const TextStyle(),
@@ -279,7 +280,7 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                         child: Container(
                                                           width:
                                                               double.infinity,
-                                                          height: 327.0,
+                                                          height: 358.0,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: FlutterFlowTheme
@@ -291,13 +292,15 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                 color: Color(
                                                                     0x32000000),
                                                                 offset: Offset(
-                                                                    0.0, 2.0),
+                                                                  0.0,
+                                                                  2.0,
+                                                                ),
                                                               )
                                                             ],
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
-                                                                        2.0),
+                                                                        4.0),
                                                           ),
                                                           child: Column(
                                                             mainAxisSize:
@@ -325,6 +328,12 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                           .transparent,
                                                                   onTap:
                                                                       () async {
+                                                                    if (Navigator.of(
+                                                                            context)
+                                                                        .canPop()) {
+                                                                      context
+                                                                          .pop();
+                                                                    }
                                                                     context
                                                                         .pushNamed(
                                                                       'Publicacion',
@@ -379,7 +388,7 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                       child:
                                                                           ClipRRect(
                                                                         borderRadius:
-                                                                            BorderRadius.circular(2.0),
+                                                                            BorderRadius.circular(4.0),
                                                                         child:
                                                                             CachedNetworkImage(
                                                                           fadeInDuration:
@@ -460,6 +469,7 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                       color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                      letterSpacing: 0.0,
                                                                                       fontWeight: FontWeight.w600,
                                                                                     ),
                                                                               ),
@@ -505,6 +515,7 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                   color: FlutterFlowTheme.of(context).primaryBackground,
+                                                                                  letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
                                                                                 ),
                                                                           ),
@@ -550,7 +561,7 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                           },
                                                                           child:
                                                                               Icon(
-                                                                            Icons.settings_sharp,
+                                                                            Icons.edit,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).secondaryText,
                                                                             size:
@@ -678,15 +689,12 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                               context.pop();
                                                                             }
                                                                             context.pushNamed(
-                                                                              'Publicaciones',
-                                                                              queryParameters: {
-                                                                                'propiedadRef': serializeParam(
-                                                                                  widget.propiedadRef,
-                                                                                  ParamType.Document,
-                                                                                ),
-                                                                              }.withoutNulls,
+                                                                              'Inicio',
                                                                               extra: <String, dynamic>{
-                                                                                'propiedadRef': widget.propiedadRef,
+                                                                                kTransitionInfoKey: const TransitionInfo(
+                                                                                  hasTransition: true,
+                                                                                  transitionType: PageTransitionType.fade,
+                                                                                ),
                                                                               },
                                                                             );
                                                                           },
@@ -713,7 +721,7 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                     Container(
                                                                   width: double
                                                                       .infinity,
-                                                                  height: 54.0,
+                                                                  height: 85.0,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     color: FlutterFlowTheme.of(
@@ -725,9 +733,11 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                             4.0,
                                                                         color: Color(
                                                                             0x33000000),
-                                                                        offset: Offset(
-                                                                            0.0,
-                                                                            2.0),
+                                                                        offset:
+                                                                            Offset(
+                                                                          0.0,
+                                                                          2.0,
+                                                                        ),
                                                                       )
                                                                     ],
                                                                     borderRadius:
@@ -751,6 +761,8 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                       Row(
                                                                         mainAxisSize:
                                                                             MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.start,
                                                                         children: [
                                                                           Align(
                                                                             alignment:
@@ -765,6 +777,7 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                       fontSize: 20.0,
+                                                                                      letterSpacing: 0.0,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -784,6 +797,7 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                       fontSize: 20.0,
+                                                                                      letterSpacing: 0.0,
                                                                                       fontWeight: FontWeight.w900,
                                                                                     ),
                                                                               ),
@@ -802,6 +816,24 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Plus Jakarta Sans',
                                                                                       fontSize: 20.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                          Opacity(
+                                                                            opacity:
+                                                                                0.5,
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                'Pago: ${listViewPropiedadesRecord.propiedadPrecioPago}',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontSize: 12.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.bold,
                                                                                     ),
                                                                               ),
                                                                             ),
@@ -820,7 +852,12 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                               padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
                                                                               child: Text(
                                                                                 'Publicado el:',
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontSize: 12.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.w600,
+                                                                                    ),
                                                                               ),
                                                                             ),
                                                                           ),
@@ -828,15 +865,20 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                             opacity:
                                                                                 0.5,
                                                                             child:
-                                                                                Text(
-                                                                              valueOrDefault<String>(
-                                                                                dateTimeFormat('yMd', listViewPropiedadesRecord.createdAt),
-                                                                                '0',
+                                                                                Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                valueOrDefault<String>(
+                                                                                  dateTimeFormat('yMd', listViewPropiedadesRecord.createdAt),
+                                                                                  '0',
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      fontSize: 12.0,
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.bold,
+                                                                                    ),
                                                                               ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Plus Jakarta Sans',
-                                                                                    fontWeight: FontWeight.bold,
-                                                                                  ),
                                                                             ),
                                                                           ),
                                                                           Opacity(
@@ -847,6 +889,8 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                               ', ',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontSize: 12.0,
+                                                                                    letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.bold,
                                                                                   ),
                                                                             ),
@@ -862,8 +906,67 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
+                                                                                    fontSize: 12.0,
+                                                                                    letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.bold,
                                                                                   ),
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                      Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Opacity(
+                                                                            opacity:
+                                                                                0.5,
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                listViewPropiedadesRecord.pais,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.w800,
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                          Opacity(
+                                                                            opacity:
+                                                                                0.5,
+                                                                            child:
+                                                                                Text(
+                                                                              ',${listViewPropiedadesRecord.estado},${listViewPropiedadesRecord.municipio}',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    letterSpacing: 0.0,
+                                                                                    fontWeight: FontWeight.w800,
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                      Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Opacity(
+                                                                            opacity:
+                                                                                0.5,
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: const EdgeInsetsDirectional.fromSTEB(4.0, 0.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                '${listViewPropiedadesRecord.colonia},${listViewPropiedadesRecord.calle},Num Ext/Int: ${listViewPropiedadesRecord.numExtInt}',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      letterSpacing: 0.0,
+                                                                                      fontWeight: FontWeight.w800,
+                                                                                    ),
+                                                                              ),
                                                                             ),
                                                                           ),
                                                                         ],
@@ -889,180 +992,6 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryBackground,
-                                            ),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
-                                              child: StreamBuilder<
-                                                  List<PropiedadesRecord>>(
-                                                stream: queryPropiedadesRecord(
-                                                  queryBuilder:
-                                                      (propiedadesRecord) =>
-                                                          propiedadesRecord
-                                                              .where(
-                                                                'owner',
-                                                                isEqualTo:
-                                                                    currentUserReference,
-                                                              )
-                                                              .orderBy(
-                                                                  'created_at',
-                                                                  descending:
-                                                                      true),
-                                                ),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            CircularProgressIndicator(
-                                                          valueColor:
-                                                              AlwaysStoppedAnimation<
-                                                                  Color>(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }
-                                                  List<PropiedadesRecord>
-                                                      listViewPropiedadesRecordList =
-                                                      snapshot.data!;
-                                                  if (listViewPropiedadesRecordList
-                                                      .isEmpty) {
-                                                    return Center(
-                                                      child: Image.asset(
-                                                        'assets/images/noProperties@2x.png',
-                                                        width: 300.0,
-                                                      ),
-                                                    );
-                                                  }
-                                                  return ListView.builder(
-                                                    padding: EdgeInsets.zero,
-                                                    primary: false,
-                                                    shrinkWrap: true,
-                                                    scrollDirection:
-                                                        Axis.vertical,
-                                                    itemCount:
-                                                        listViewPropiedadesRecordList
-                                                            .length,
-                                                    itemBuilder: (context,
-                                                        listViewIndex) {
-                                                      final listViewPropiedadesRecord =
-                                                          listViewPropiedadesRecordList[
-                                                              listViewIndex];
-                                                      return Padding(
-                                                        padding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    4.0,
-                                                                    0.0,
-                                                                    4.0,
-                                                                    12.0),
-                                                        child: Container(
-                                                          width:
-                                                              double.infinity,
-                                                          height: 327.0,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryBackground,
-                                                            boxShadow: const [
-                                                              BoxShadow(
-                                                                blurRadius: 4.0,
-                                                                color: Color(
-                                                                    0x33000000),
-                                                                offset: Offset(
-                                                                    0.0, 2.0),
-                                                              )
-                                                            ],
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        2.0),
-                                                            border: Border.all(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                              width: 2.0,
-                                                            ),
-                                                          ),
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Padding(
-                                                                padding:
-                                                                    const EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            4.0,
-                                                                            30.0,
-                                                                            4.0,
-                                                                            0.0),
-                                                                child:
-                                                                    Container(
-                                                                  width: 263.0,
-                                                                  height: 255.0,
-                                                                  decoration:
-                                                                      BoxDecoration(
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryBackground,
-                                                                    borderRadius:
-                                                                        BorderRadius.circular(
-                                                                            2.0),
-                                                                    border:
-                                                                        Border
-                                                                            .all(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .noColor,
-                                                                    ),
-                                                                  ),
-                                                                  child:
-                                                                      BarcodeWidget(
-                                                                    data:
-                                                                        'https://ite-qr-28vrnz.flutterflow.app/Publicacion?propiedadRef=${listViewPropiedadesRecord.reference.id}',
-                                                                    barcode: Barcode
-                                                                        .qrCode(),
-                                                                    width:
-                                                                        300.0,
-                                                                    height:
-                                                                        110.0,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    backgroundColor:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                    errorBuilder:
-                                                                        (context,
-                                                                                error) =>
-                                                                            const SizedBox(
-                                                                      width:
-                                                                          300.0,
-                                                                      height:
-                                                                          110.0,
-                                                                    ),
-                                                                    drawText:
-                                                                        false,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      );
-                                                    },
-                                                  );
-                                                },
-                                              ),
                                             ),
                                           ),
                                         ],

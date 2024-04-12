@@ -1,9 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
-import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'navbar_model.dart';
@@ -79,7 +76,12 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'QR PRO',
-                            style: FlutterFlowTheme.of(context).headlineMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .headlineMedium
+                                .override(
+                                  fontFamily: 'Urbanist',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                         ),
                       ],
@@ -100,7 +102,12 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                               16.0, 12.0, 0.0, 0.0),
                           child: Text(
                             'Navegación',
-                            style: FlutterFlowTheme.of(context).labelMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                         ),
                         MouseRegion(
@@ -162,7 +169,11 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                         child: Text(
                                           'Inicio',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -223,7 +234,11 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                       child: Text(
                                         'Buscar',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ],
@@ -291,7 +306,11 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                         child: Text(
                                           'Publicar',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -306,7 +325,12 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                               16.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Cuenta',
-                            style: FlutterFlowTheme.of(context).labelMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                         ),
                         MouseRegion(
@@ -368,7 +392,11 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                         child: Text(
                                           'Perfil',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -437,7 +465,11 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                         child: Text(
                                           'Publicaciones',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -509,7 +541,12 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                           child: Text(
                                             'Salir',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],
@@ -534,100 +571,38 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              final selectedMedia = await selectMedia(
-                                mediaSource: MediaSource.photoGallery,
-                                multiImage: false,
-                              );
-                              if (selectedMedia != null &&
-                                  selectedMedia.every((m) => validateFileFormat(
-                                      m.storagePath, context))) {
-                                setState(() => _model.isDataUploading = true);
-                                var selectedUploadedFiles = <FFUploadedFile>[];
-
-                                var downloadUrls = <String>[];
-                                try {
-                                  selectedUploadedFiles = selectedMedia
-                                      .map((m) => FFUploadedFile(
-                                            name: m.storagePath.split('/').last,
-                                            bytes: m.bytes,
-                                            height: m.dimensions?.height,
-                                            width: m.dimensions?.width,
-                                            blurHash: m.blurHash,
-                                          ))
-                                      .toList();
-
-                                  downloadUrls = (await Future.wait(
-                                    selectedMedia.map(
-                                      (m) async => await uploadData(
-                                          m.storagePath, m.bytes),
-                                    ),
-                                  ))
-                                      .where((u) => u != null)
-                                      .map((u) => u!)
-                                      .toList();
-                                } finally {
-                                  _model.isDataUploading = false;
-                                }
-                                if (selectedUploadedFiles.length ==
-                                        selectedMedia.length &&
-                                    downloadUrls.length ==
-                                        selectedMedia.length) {
-                                  setState(() {
-                                    _model.uploadedLocalFile =
-                                        selectedUploadedFiles.first;
-                                    _model.uploadedFileUrl = downloadUrls.first;
-                                  });
-                                } else {
-                                  setState(() {});
-                                  return;
-                                }
-                              }
-
-                              await currentUserReference!
-                                  .update(createUsersRecordData(
-                                photoUrl: _model.uploadedFileUrl,
-                              ));
-                            },
-                            child: Container(
-                              width: 50.0,
-                              height: 50.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).accent1,
-                                borderRadius: const BorderRadius.only(
-                                  bottomLeft: Radius.circular(10.0),
-                                  bottomRight: Radius.circular(10.0),
-                                  topLeft: Radius.circular(10.0),
-                                  topRight: Radius.circular(10.0),
-                                ),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  width: 2.0,
-                                ),
+                          Container(
+                            width: 50.0,
+                            height: 50.0,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context).accent1,
+                              borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.circular(10.0),
+                                bottomRight: Radius.circular(10.0),
+                                topLeft: Radius.circular(10.0),
+                                topRight: Radius.circular(10.0),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(2.0),
-                                child: AuthUserStreamWidget(
-                                  builder: (context) => ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: CachedNetworkImage(
-                                      fadeInDuration:
-                                          const Duration(milliseconds: 500),
-                                      fadeOutDuration:
-                                          const Duration(milliseconds: 500),
-                                      imageUrl: valueOrDefault<String>(
-                                        currentUserPhoto,
-                                        'Avatar',
-                                      ),
-                                      width: 44.0,
-                                      height: 44.0,
-                                      fit: BoxFit.cover,
+                              border: Border.all(
+                                color: FlutterFlowTheme.of(context).primary,
+                                width: 2.0,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(2.0),
+                              child: AuthUserStreamWidget(
+                                builder: (context) => ClipRRect(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  child: CachedNetworkImage(
+                                    fadeInDuration: const Duration(milliseconds: 500),
+                                    fadeOutDuration:
+                                        const Duration(milliseconds: 500),
+                                    imageUrl: valueOrDefault<String>(
+                                      currentUserPhoto,
+                                      'Avatar',
                                     ),
+                                    width: 44.0,
+                                    height: 44.0,
+                                    fit: BoxFit.cover,
                                   ),
                                 ),
                               ),
@@ -647,7 +622,11 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                         valueOrDefault(
                                             currentUserDocument?.fullName, ''),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   if (currentUserEmail != '')
@@ -657,7 +636,11 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                       child: Text(
                                         currentUserEmail,
                                         style: FlutterFlowTheme.of(context)
-                                            .labelMedium,
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                 ],

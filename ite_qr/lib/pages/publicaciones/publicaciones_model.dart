@@ -16,8 +16,6 @@ class PublicacionesModel extends FlutterFlowModel<PublicacionesWidget> {
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     navbarModel1 = createModel(context, () => NavbarModel());
@@ -31,8 +29,4 @@ class PublicacionesModel extends FlutterFlowModel<PublicacionesWidget> {
     navbarModel2.dispose();
     tabBarController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }
