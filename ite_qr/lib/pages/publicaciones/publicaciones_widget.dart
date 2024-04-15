@@ -684,19 +684,28 @@ class _PublicacionesWidgetState extends State<PublicacionesWidget>
                                                                               Colors.transparent,
                                                                           onTap:
                                                                               () async {
-                                                                            await listViewPropiedadesRecord.reference.delete();
-                                                                            if (Navigator.of(context).canPop()) {
-                                                                              context.pop();
+                                                                            var confirmDialogResponse = await showDialog<bool>(
+                                                                                  context: context,
+                                                                                  builder: (alertDialogContext) {
+                                                                                    return AlertDialog(
+                                                                                      content: const Text('Deseas eliminar la publicación?'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                          child: const Text('Cancelar'),
+                                                                                        ),
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                          child: const Text('Confirmar'),
+                                                                                        ),
+                                                                                      ],
+                                                                                    );
+                                                                                  },
+                                                                                ) ??
+                                                                                false;
+                                                                            if (confirmDialogResponse) {
+                                                                              await listViewPropiedadesRecord.reference.delete();
                                                                             }
-                                                                            context.pushNamed(
-                                                                              'Inicio',
-                                                                              extra: <String, dynamic>{
-                                                                                kTransitionInfoKey: const TransitionInfo(
-                                                                                  hasTransition: true,
-                                                                                  transitionType: PageTransitionType.fade,
-                                                                                ),
-                                                                              },
-                                                                            );
                                                                           },
                                                                           child:
                                                                               Icon(

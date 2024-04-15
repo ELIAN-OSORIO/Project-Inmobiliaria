@@ -379,7 +379,7 @@ class _EditarPerfilWidgetState extends State<EditarPerfilWidget> {
                                           .clearRedirectLocation();
 
                                       context.goNamedAuth(
-                                          'Login', context.mounted);
+                                          'Inicio', context.mounted);
                                     },
                                     text: 'Log Out',
                                     options: FFButtonOptions(

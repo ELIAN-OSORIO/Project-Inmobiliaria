@@ -1449,7 +1449,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                                   child: ClipRRect(
                                                                                     borderRadius: BorderRadius.circular(8.0),
                                                                                     child: Image.network(
-                                                                                      widget.propiedadRef!.propiedadImagenes,
+                                                                                      _model.uploadedFileUrl1,
                                                                                       width: 300.0,
                                                                                       height: 200.0,
                                                                                       fit: BoxFit.cover,
@@ -4009,7 +4009,7 @@ class _FormularioEditarWidgetState extends State<FormularioEditarWidget>
                                                                               propiedadPrecio: _model.preciofinalController.text,
                                                                               mascotas: _model.mascotasValue,
                                                                               propiedadPrecioPago: _model.pagomensualunicoValue,
-                                                                              propiedadImg1: _model.uploadedFileUrl2,
+                                                                              propiedadImg1: _model.uploadedFileUrl2 != '' ? _model.uploadedFileUrl2 : widget.propiedadRef?.propiedadImg1,
                                                                               propiedadImg2: _model.uploadedFileUrl3,
                                                                               propiedadImg3: _model.uploadedFileUrl4,
                                                                               propiedadImg4: _model.uploadedFileUrl5,

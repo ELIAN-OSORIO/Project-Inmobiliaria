@@ -195,53 +195,70 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            child: AnimatedContainer(
-                              duration: const Duration(milliseconds: 200),
-                              curve: Curves.easeInOut,
-                              width: double.infinity,
-                              height: 44.0,
-                              decoration: BoxDecoration(
-                                color: () {
-                                  if (_model.mouseRegionHovered2) {
-                                    return FlutterFlowTheme.of(context)
-                                        .alternate;
-                                  } else if (_model.navSelect == 2) {
-                                    return FlutterFlowTheme.of(context)
-                                        .alternate;
-                                  } else {
-                                    return FlutterFlowTheme.of(context)
-                                        .primaryBackground;
-                                  }
-                                }(),
-                                borderRadius: BorderRadius.circular(12.0),
-                                shape: BoxShape.rectangle,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 0.0, 6.0, 0.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Icon(
-                                      Icons.public_sharp,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 24.0,
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                context.pushNamed(
+                                  'Buscando',
+                                  queryParameters: {
+                                    'search': serializeParam(
+                                      'Culiacan',
+                                      ParamType.String,
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          12.0, 0.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Buscar',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              letterSpacing: 0.0,
-                                            ),
+                                  }.withoutNulls,
+                                );
+                              },
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 200),
+                                curve: Curves.easeInOut,
+                                width: double.infinity,
+                                height: 44.0,
+                                decoration: BoxDecoration(
+                                  color: () {
+                                    if (_model.mouseRegionHovered2) {
+                                      return FlutterFlowTheme.of(context)
+                                          .alternate;
+                                    } else if (_model.navSelect == 2) {
+                                      return FlutterFlowTheme.of(context)
+                                          .alternate;
+                                    } else {
+                                      return FlutterFlowTheme.of(context)
+                                          .primaryBackground;
+                                    }
+                                  }(),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  shape: BoxShape.rectangle,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8.0, 0.0, 6.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Icon(
+                                        Icons.public_sharp,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 24.0,
                                       ),
-                                    ),
-                                  ],
+                                      Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Buscar',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -333,162 +350,93 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                 ),
                           ),
                         ),
-                        MouseRegion(
-                          opaque: false,
-                          cursor: MouseCursor.defer ?? MouseCursor.defer,
-                          onEnter: ((event) async {
-                            setState(() => _model.mouseRegionHovered4 = true);
-                          }),
-                          onExit: ((event) async {
-                            setState(() => _model.mouseRegionHovered4 = false);
-                          }),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed('Perfil');
-                              },
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 200),
-                                curve: Curves.easeInOut,
-                                width: double.infinity,
-                                height: 44.0,
-                                decoration: BoxDecoration(
-                                  color: () {
-                                    if (_model.mouseRegionHovered4) {
-                                      return FlutterFlowTheme.of(context)
-                                          .alternate;
-                                    } else if (_model.navSelect == 3) {
-                                      return FlutterFlowTheme.of(context)
-                                          .alternate;
-                                    } else {
-                                      return FlutterFlowTheme.of(context)
-                                          .primaryBackground;
-                                    }
-                                  }(),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  shape: BoxShape.rectangle,
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 0.0, 6.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Icon(
-                                        Icons.account_circle,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Perfil',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        MouseRegion(
-                          opaque: false,
-                          cursor: MouseCursor.defer ?? MouseCursor.defer,
-                          onEnter: ((event) async {
-                            setState(() => _model.mouseRegionHovered5 = true);
-                          }),
-                          onExit: ((event) async {
-                            setState(() => _model.mouseRegionHovered5 = false);
-                          }),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 0.0, 16.0, 0.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed('Publicaciones');
-                              },
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 200),
-                                curve: Curves.easeInOut,
-                                width: double.infinity,
-                                height: 44.0,
-                                decoration: BoxDecoration(
-                                  color: () {
-                                    if (_model.mouseRegionHovered5) {
-                                      return FlutterFlowTheme.of(context)
-                                          .alternate;
-                                    } else if (_model.navSelect == 3) {
-                                      return FlutterFlowTheme.of(context)
-                                          .alternate;
-                                    } else {
-                                      return FlutterFlowTheme.of(context)
-                                          .primaryBackground;
-                                    }
-                                  }(),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  shape: BoxShape.rectangle,
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      8.0, 0.0, 6.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Icon(
-                                        Icons.qr_code_scanner_sharp,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 24.0,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          'Publicaciones',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        if (currentUserUid != '')
+                        if (currentUserEmail != '')
                           MouseRegion(
                             opaque: false,
                             cursor: MouseCursor.defer ?? MouseCursor.defer,
                             onEnter: ((event) async {
-                              setState(() => _model.mouseRegionHovered6 = true);
+                              setState(() => _model.mouseRegionHovered4 = true);
                             }),
                             onExit: ((event) async {
                               setState(
-                                  () => _model.mouseRegionHovered6 = false);
+                                  () => _model.mouseRegionHovered4 = false);
+                            }),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('Perfil');
+                                },
+                                child: AnimatedContainer(
+                                  duration: const Duration(milliseconds: 200),
+                                  curve: Curves.easeInOut,
+                                  width: double.infinity,
+                                  height: 44.0,
+                                  decoration: BoxDecoration(
+                                    color: () {
+                                      if (_model.mouseRegionHovered4) {
+                                        return FlutterFlowTheme.of(context)
+                                            .alternate;
+                                      } else if (_model.navSelect == 3) {
+                                        return FlutterFlowTheme.of(context)
+                                            .alternate;
+                                      } else {
+                                        return FlutterFlowTheme.of(context)
+                                            .primaryBackground;
+                                      }
+                                    }(),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 6.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.account_circle,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Perfil',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        if (currentUserEmail == '')
+                          MouseRegion(
+                            opaque: false,
+                            cursor: MouseCursor.defer ?? MouseCursor.defer,
+                            onEnter: ((event) async {
+                              setState(() => _model.mouseRegionHovered5 = true);
+                            }),
+                            onExit: ((event) async {
+                              setState(
+                                  () => _model.mouseRegionHovered5 = false);
                             }),
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
@@ -508,7 +456,161 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                                   height: 44.0,
                                   decoration: BoxDecoration(
                                     color: () {
+                                      if (_model.mouseRegionHovered5) {
+                                        return FlutterFlowTheme.of(context)
+                                            .success;
+                                      } else if (_model.navSelect == 3) {
+                                        return FlutterFlowTheme.of(context)
+                                            .success;
+                                      } else {
+                                        return FlutterFlowTheme.of(context)
+                                            .primary;
+                                      }
+                                    }(),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 6.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.login_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Registrate/Logueate',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        if (currentUserEmail != '')
+                          MouseRegion(
+                            opaque: false,
+                            cursor: MouseCursor.defer ?? MouseCursor.defer,
+                            onEnter: ((event) async {
+                              setState(() => _model.mouseRegionHovered6 = true);
+                            }),
+                            onExit: ((event) async {
+                              setState(
+                                  () => _model.mouseRegionHovered6 = false);
+                            }),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('Publicaciones');
+                                },
+                                child: AnimatedContainer(
+                                  duration: const Duration(milliseconds: 200),
+                                  curve: Curves.easeInOut,
+                                  width: double.infinity,
+                                  height: 44.0,
+                                  decoration: BoxDecoration(
+                                    color: () {
                                       if (_model.mouseRegionHovered6) {
+                                        return FlutterFlowTheme.of(context)
+                                            .alternate;
+                                      } else if (_model.navSelect == 3) {
+                                        return FlutterFlowTheme.of(context)
+                                            .alternate;
+                                      } else {
+                                        return FlutterFlowTheme.of(context)
+                                            .primaryBackground;
+                                      }
+                                    }(),
+                                    borderRadius: BorderRadius.circular(12.0),
+                                    shape: BoxShape.rectangle,
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 0.0, 6.0, 0.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Icon(
+                                          Icons.qr_code_scanner_sharp,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 24.0,
+                                        ),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            'Publicaciones',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        if (currentUserUid != '')
+                          MouseRegion(
+                            opaque: false,
+                            cursor: MouseCursor.defer ?? MouseCursor.defer,
+                            onEnter: ((event) async {
+                              setState(() => _model.mouseRegionHovered7 = true);
+                            }),
+                            onExit: ((event) async {
+                              setState(
+                                  () => _model.mouseRegionHovered7 = false);
+                            }),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 0.0, 16.0, 0.0),
+                              child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  context.pushNamed('Login');
+                                },
+                                child: AnimatedContainer(
+                                  duration: const Duration(milliseconds: 200),
+                                  curve: Curves.easeInOut,
+                                  width: double.infinity,
+                                  height: 44.0,
+                                  decoration: BoxDecoration(
+                                    color: () {
+                                      if (_model.mouseRegionHovered7) {
                                         return FlutterFlowTheme.of(context)
                                             .error;
                                       } else if (_model.navSelect == 3) {

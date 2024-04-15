@@ -174,15 +174,6 @@ class _QrWidgetState extends State<QrWidget> {
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Text(
-                                    'QR-Inmuebles',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
                                   Align(
                                     alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Padding(

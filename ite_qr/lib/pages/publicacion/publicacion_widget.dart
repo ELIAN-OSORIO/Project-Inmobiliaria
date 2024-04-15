@@ -154,7 +154,8 @@ class _PublicacionWidgetState extends State<PublicacionWidget> {
                           Align(
                             alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsets.all(1.0),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  1.0, 4.0, 1.0, 1.0),
                               child: Container(
                                 width: double.infinity,
                                 height: double.infinity,
