@@ -166,7 +166,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
-                                    offset: Offset(0.0, 2.0),
+                                    offset: Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(12.0),
@@ -194,10 +197,19 @@ class _LoginWidgetState extends State<LoginWidget>
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 32.0, 0.0, 32.0, 0.0),
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .titleMedium,
+                                            .titleMedium
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              letterSpacing: 0.0,
+                                            ),
                                         unselectedLabelStyle:
                                             FlutterFlowTheme.of(context)
-                                                .titleMedium,
+                                                .titleMedium
+                                                .override(
+                                                  fontFamily:
+                                                      'Plus Jakarta Sans',
+                                                  letterSpacing: 0.0,
+                                                ),
                                         indicatorColor:
                                             FlutterFlowTheme.of(context)
                                                 .primary,
@@ -261,7 +273,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineMedium,
+                                                                .headlineMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                       Padding(
                                                         padding:
@@ -277,7 +295,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               TextAlign.start,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .labelMedium,
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Plus Jakarta Sans',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                       ),
                                                       Padding(
@@ -309,7 +333,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLarge,
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                               enabledBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
@@ -377,7 +407,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .bodyLarge,
+                                                                .bodyLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                             keyboardType:
                                                                 TextInputType
                                                                     .emailAddress,
@@ -418,7 +454,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLarge,
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                               enabledBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
@@ -510,7 +552,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .bodyLarge,
+                                                                .bodyLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                             validator: _model
                                                                 .passwordCreateControllerValidator
                                                                 .asValidator(
@@ -589,6 +637,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                             'Plus Jakarta Sans',
                                                                         color: Colors
                                                                             .white,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -628,7 +678,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                         .center,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium,
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Plus Jakarta Sans',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
                                                               ),
                                                             ),
                                                           ),
@@ -719,6 +775,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.bold,
                                                                             ),
                                                                         elevation:
@@ -773,6 +830,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Plus Jakarta Sans',
+                                                                                    letterSpacing: 0.0,
                                                                                     fontWeight: FontWeight.bold,
                                                                                   ),
                                                                               elevation: 0.0,
@@ -839,7 +897,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineMedium,
+                                                                .headlineMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                       Padding(
                                                         padding:
@@ -855,7 +919,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               TextAlign.start,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .labelMedium,
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Plus Jakarta Sans',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                       ),
                                                       Padding(
@@ -887,7 +957,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLarge,
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                               enabledBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
@@ -958,7 +1034,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .bodyLarge,
+                                                                .bodyLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                             keyboardType:
                                                                 TextInputType
                                                                     .emailAddress,
@@ -999,7 +1081,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelLarge,
+                                                                      .labelLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                               enabledBorder:
                                                                   OutlineInputBorder(
                                                                 borderSide:
@@ -1094,7 +1182,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .bodyLarge,
+                                                                .bodyLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                             validator: _model
                                                                 .passwordControllerValidator
                                                                 .asValidator(
@@ -1173,6 +1267,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                             'Plus Jakarta Sans',
                                                                         color: Colors
                                                                             .white,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                       ),
                                                               elevation: 3.0,
                                                               borderSide:
@@ -1207,7 +1303,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 .center,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .labelMedium,
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Plus Jakarta Sans',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
                                                         ),
                                                       ),
@@ -1296,6 +1398,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.bold,
                                                                       ),
@@ -1375,6 +1479,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
                                                                               fontWeight: FontWeight.bold,
                                                                             ),
                                                                         elevation:
@@ -1457,6 +1562,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.bold,
                                                                       ),

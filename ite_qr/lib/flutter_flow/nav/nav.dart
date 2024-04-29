@@ -73,13 +73,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const InicioWidget() : const LoginWidget(),
+          appStateNotifier.loggedIn ? const InicioWidget() : const InicioWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const InicioWidget() : const LoginWidget(),
+              appStateNotifier.loggedIn ? const InicioWidget() : const InicioWidget(),
           routes: [
             FFRoute(
               name: 'Inicio',
@@ -118,8 +118,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     getDoc(['propiedades'], PropiedadesRecord.fromSnapshot),
               },
               builder: (context, params) => PublicacionesWidget(
-                propiedadRef:
-                    params.getParam('propiedadRef', ParamType.Document),
+                propiedadRef: params.getParam(
+                  'propiedadRef',
+                  ParamType.Document,
+                ),
               ),
             ),
             FFRoute(
@@ -130,16 +132,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     getDoc(['propiedades'], PropiedadesRecord.fromSnapshot),
               },
               builder: (context, params) => PublicacionWidget(
-                propiedadRef:
-                    params.getParam('propiedadRef', ParamType.Document),
-                scannedValue: params.getParam('scannedValue', ParamType.String),
+                propiedadRef: params.getParam(
+                  'propiedadRef',
+                  ParamType.Document,
+                ),
+                scannedValue: params.getParam(
+                  'scannedValue',
+                  ParamType.String,
+                ),
               ),
             ),
             FFRoute(
               name: 'Buscando',
               path: 'Buscar',
               builder: (context, params) => BuscandoWidget(
-                search: params.getParam('search', ParamType.String),
+                search: params.getParam(
+                  'search',
+                  ParamType.String,
+                ),
               ),
             ),
             FFRoute(
@@ -151,8 +161,28 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                     getDoc(['propiedades'], PropiedadesRecord.fromSnapshot),
               },
               builder: (context, params) => FormularioEditarWidget(
-                propiedadRef:
-                    params.getParam('propiedadRef', ParamType.Document),
+                propiedadRef: params.getParam(
+                  'propiedadRef',
+                  ParamType.Document,
+                ),
+              ),
+            ),
+            FFRoute(
+              name: 'QR',
+              path: 'QR',
+              asyncParams: {
+                'propiedadRef':
+                    getDoc(['propiedades'], PropiedadesRecord.fromSnapshot),
+              },
+              builder: (context, params) => QrWidget(
+                propiedadRef: params.getParam(
+                  'propiedadRef',
+                  ParamType.Document,
+                ),
+                scannedValue: params.getParam(
+                  'scannedValue',
+                  ParamType.String,
+                ),
               ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
@@ -288,8 +318,12 @@ class FFParameters {
       return param;
     }
     // Return serialized value.
-    return deserializeParam<T>(param, type, isList,
-        collectionNamePath: collectionNamePath);
+    return deserializeParam<T>(
+      param,
+      type,
+      isList,
+      collectionNamePath: collectionNamePath,
+    );
   }
 }
 
@@ -322,7 +356,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/login';
+            return '/inicio';
           }
           return null;
         },

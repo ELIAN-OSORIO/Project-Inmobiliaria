@@ -11,3 +11,4 @@ export '/pages/publicacion/publicacion_widget.dart' show PublicacionWidget;
 export '/pages/buscando/buscando_widget.dart' show BuscandoWidget;
 export '/pages/formulario_editar/formulario_editar_widget.dart'
     show FormularioEditarWidget;
+export '/pages/qr/qr_widget.dart' show QrWidget;

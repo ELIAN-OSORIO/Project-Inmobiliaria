@@ -155,6 +155,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                               color: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               fontSize: 20.0,
+                              letterSpacing: 0.0,
                             ),
                       ),
                     ),
@@ -207,7 +208,10 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                   BoxShadow(
                                     blurRadius: 4.0,
                                     color: Color(0x33000000),
-                                    offset: Offset(0.0, 2.0),
+                                    offset: Offset(
+                                      0.0,
+                                      2.0,
+                                    ),
                                   )
                                 ],
                               ),
@@ -222,6 +226,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                           .titleMedium
                                           .override(
                                             fontFamily: 'Plus Jakarta Sans',
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
                                       unselectedLabelStyle: const TextStyle(),
@@ -308,7 +313,9 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                                0.0, 2.0),
+                                                              0.0,
+                                                              2.0,
+                                                            ),
                                                           )
                                                         ],
                                                       ),
@@ -360,6 +367,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 18.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.bold,
                                                                               ),
                                                                         ),
@@ -385,6 +393,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -410,10 +419,18 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -458,7 +475,11 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .paisControllerValidator
                                                                             .asValidator(context),
@@ -484,6 +505,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -509,10 +531,18 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -557,7 +587,11 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .cpControllerValidator
                                                                             .asValidator(context),
@@ -583,6 +617,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -608,10 +643,18 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -656,7 +699,11 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .estadoControllerValidator
                                                                             .asValidator(context),
@@ -682,6 +729,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -707,10 +755,18 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -755,7 +811,11 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .municipioControllerValidator
                                                                             .asValidator(context),
@@ -781,6 +841,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -806,10 +867,18 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -854,7 +923,11 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .coloniaControllerValidator
                                                                             .asValidator(context),
@@ -880,6 +953,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -905,10 +979,18 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -953,7 +1035,11 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         validator: _model
                                                                             .calleControllerValidator
                                                                             .asValidator(context),
@@ -979,6 +1065,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -1004,10 +1091,18 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             false,
                                                                         decoration:
                                                                             InputDecoration(
-                                                                          labelStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
+                                                                          labelStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          hintStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           enabledBorder:
                                                                               OutlineInputBorder(
                                                                             borderSide:
@@ -1052,7 +1147,11 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               true,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         keyboardType:
                                                                             TextInputType.number,
                                                                         validator: _model
@@ -1099,8 +1198,10 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                         blurRadius: 4.0,
                                                         color:
                                                             Color(0x33000000),
-                                                        offset:
-                                                            Offset(0.0, 2.0),
+                                                        offset: Offset(
+                                                          0.0,
+                                                          2.0,
+                                                        ),
                                                       )
                                                     ],
                                                   ),
@@ -1138,6 +1239,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                         'Plus Jakarta Sans',
                                                                     fontSize:
                                                                         18.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
@@ -1166,6 +1269,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                           'Plus Jakarta Sans',
                                                                       fontSize:
                                                                           14.0,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .w600,
@@ -1637,6 +1742,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                                 'Plus Jakarta Sans',
                                                                             fontSize:
                                                                                 14.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
                                                                           ),
@@ -1688,8 +1795,12 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             374.0,
                                                                         height:
                                                                             56.0,
-                                                                        textStyle:
-                                                                            FlutterFlowTheme.of(context).bodyMedium,
+                                                                        textStyle: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                         hintText:
                                                                             'Selecciona ',
                                                                         icon:
@@ -1726,8 +1837,12 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             false,
                                                                         labelText:
                                                                             '',
-                                                                        labelTextStyle:
-                                                                            FlutterFlowTheme.of(context).labelMedium,
+                                                                        labelTextStyle: FlutterFlowTheme.of(context)
+                                                                            .labelMedium
+                                                                            .override(
+                                                                              fontFamily: 'Plus Jakarta Sans',
+                                                                              letterSpacing: 0.0,
+                                                                            ),
                                                                       ),
                                                                     ),
                                                                   ),
@@ -1773,6 +1888,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -1837,6 +1953,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                     fontFamily: 'Urbanist',
                                                                                     fontSize: 20.0,
+                                                                                    letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
                                                                             count: _model.dormitoriosValue ??=
@@ -1882,6 +1999,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                   fontSize: 14.0,
+                                                                                  letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
                                                                                 ),
                                                                           ),
@@ -1934,6 +2052,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                                   style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                         fontFamily: 'Urbanist',
                                                                                         fontSize: 20.0,
+                                                                                        letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
                                                                                 count: _model.cocinaValue ??= 0,
@@ -1989,6 +2108,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -2053,6 +2173,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                     fontFamily: 'Urbanist',
                                                                                     fontSize: 20.0,
+                                                                                    letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
                                                                             count: _model.salaValue ??=
@@ -2098,6 +2219,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                   fontSize: 14.0,
+                                                                                  letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
                                                                                 ),
                                                                           ),
@@ -2150,6 +2272,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                                   style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                         fontFamily: 'Urbanist',
                                                                                         fontSize: 20.0,
+                                                                                        letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
                                                                                 count: _model.garajeValue ??= 0,
@@ -2205,6 +2328,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -2269,6 +2393,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                     fontFamily: 'Urbanist',
                                                                                     fontSize: 20.0,
+                                                                                    letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
                                                                             count: _model.banosValue ??=
@@ -2314,6 +2439,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Plus Jakarta Sans',
                                                                                   fontSize: 14.0,
+                                                                                  letterSpacing: 0.0,
                                                                                   fontWeight: FontWeight.w600,
                                                                                 ),
                                                                           ),
@@ -2366,6 +2492,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                                   style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                         fontFamily: 'Urbanist',
                                                                                         fontSize: 20.0,
+                                                                                        letterSpacing: 0.0,
                                                                                       ),
                                                                                 ),
                                                                                 count: _model.patiosValue ??= 0,
@@ -2421,6 +2548,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -2485,6 +2613,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               style: FlutterFlowTheme.of(context).titleLarge.override(
                                                                                     fontFamily: 'Urbanist',
                                                                                     fontSize: 20.0,
+                                                                                    letterSpacing: 0.0,
                                                                                   ),
                                                                             ),
                                                                             count: _model.pisosValue ??=
@@ -2528,6 +2657,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -2575,8 +2705,14 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                                 autofocus: true,
                                                                                 obscureText: false,
                                                                                 decoration: InputDecoration(
-                                                                                  labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                                                                                  hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                                                                                  labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
+                                                                                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                        fontFamily: 'Plus Jakarta Sans',
+                                                                                        letterSpacing: 0.0,
+                                                                                      ),
                                                                                   enabledBorder: OutlineInputBorder(
                                                                                     borderSide: BorderSide(
                                                                                       color: FlutterFlowTheme.of(context).alternate,
@@ -2607,7 +2743,10 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                                   ),
                                                                                   filled: true,
                                                                                 ),
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
                                                                                 keyboardType: TextInputType.number,
                                                                                 validator: _model.metroscuadradosControllerValidator.asValidator(context),
                                                                               ),
@@ -2665,6 +2804,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 fontSize: 14.0,
+                                                                                letterSpacing: 0.0,
                                                                                 fontWeight: FontWeight.w600,
                                                                               ),
                                                                         ),
@@ -2712,8 +2852,14 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               obscureText: false,
                                                                               decoration: InputDecoration(
                                                                                 labelText: 'MXN',
-                                                                                labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                                                                                hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                                                                                labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
+                                                                                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                                                                                      fontFamily: 'Plus Jakarta Sans',
+                                                                                      letterSpacing: 0.0,
+                                                                                    ),
                                                                                 enabledBorder: OutlineInputBorder(
                                                                                   borderSide: BorderSide(
                                                                                     color: FlutterFlowTheme.of(context).alternate,
@@ -2744,7 +2890,10 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                                 ),
                                                                                 filled: true,
                                                                               ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Plus Jakarta Sans',
+                                                                                    letterSpacing: 0.0,
+                                                                                  ),
                                                                               keyboardType: TextInputType.number,
                                                                               validator: _model.preciofinalControllerValidator.asValidator(context),
                                                                             ),
@@ -2762,10 +2911,18 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               FormFieldController<String>(null),
                                                                           optionHeight:
                                                                               32.0,
-                                                                          textStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          selectedTextStyle:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                          textStyle: FlutterFlowTheme.of(context)
+                                                                              .labelMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
+                                                                          selectedTextStyle: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: 'Plus Jakarta Sans',
+                                                                                letterSpacing: 0.0,
+                                                                              ),
                                                                           buttonPosition:
                                                                               RadioButtonPosition.left,
                                                                           direction:
@@ -2824,7 +2981,9 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                             color: Color(
                                                                 0x33000000),
                                                             offset: Offset(
-                                                                0.0, 2.0),
+                                                              0.0,
+                                                              2.0,
+                                                            ),
                                                           )
                                                         ],
                                                         borderRadius:
@@ -2867,6 +3026,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             'Plus Jakarta Sans',
                                                                         fontSize:
                                                                             18.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.bold,
                                                                       ),
@@ -2894,6 +3055,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
                                                                         ),
@@ -2920,12 +3083,24 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                       false,
                                                                   decoration:
                                                                       InputDecoration(
-                                                                    labelStyle:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                    labelStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     hintStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .labelMedium,
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     enabledBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
@@ -2981,7 +3156,13 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                   maxLines: 3,
                                                                   validator: _model
                                                                       .infoextraControllerValidator
@@ -3011,6 +3192,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
                                                                         ),
@@ -3044,12 +3227,24 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                           null),
                                                                       optionHeight:
                                                                           32.0,
-                                                                      textStyle:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .labelMedium,
-                                                                      selectedTextStyle:
-                                                                          FlutterFlowTheme.of(context)
-                                                                              .bodyMedium,
+                                                                      textStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .labelMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Plus Jakarta Sans',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
+                                                                      selectedTextStyle: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Plus Jakarta Sans',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
                                                                       buttonPosition:
                                                                           RadioButtonPosition
                                                                               .left,
@@ -3097,6 +3292,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                             'Plus Jakarta Sans',
                                                                         fontSize:
                                                                             18.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.bold,
                                                                       ),
@@ -3126,7 +3323,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                           Icons
                                                                               .money_off),
                                                                       ChipData(
-                                                                          'Ambas',
+                                                                          'Venta/Renta',
                                                                           Icons
                                                                               .bedroom_parent),
                                                                       ChipData(
@@ -3161,6 +3358,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             fontSize:
                                                                                 16.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                           ),
                                                                       iconColor:
                                                                           FlutterFlowTheme.of(context)
@@ -3188,6 +3387,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                                 FlutterFlowTheme.of(context).primaryBackground,
                                                                             fontSize:
                                                                                 16.0,
+                                                                            letterSpacing:
+                                                                                0.0,
                                                                           ),
                                                                       iconColor:
                                                                           FlutterFlowTheme.of(context)
@@ -3251,6 +3452,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               18.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.bold,
                                                                         ),
@@ -3279,6 +3482,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
                                                                         ),
@@ -3308,12 +3513,24 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                       false,
                                                                   decoration:
                                                                       InputDecoration(
-                                                                    labelStyle:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                    labelStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     hintStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .labelMedium,
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     enabledBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
@@ -3371,7 +3588,13 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                   validator: _model
                                                                       .contactonombreControllerValidator
                                                                       .asValidator(
@@ -3400,6 +3623,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
                                                                         ),
@@ -3429,12 +3654,24 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                       false,
                                                                   decoration:
                                                                       InputDecoration(
-                                                                    labelStyle:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                    labelStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     hintStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .labelMedium,
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     enabledBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
@@ -3492,7 +3729,13 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                   validator: _model
                                                                       .contactocelularController1Validator
                                                                       .asValidator(
@@ -3521,6 +3764,8 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               'Plus Jakarta Sans',
                                                                           fontSize:
                                                                               14.0,
+                                                                          letterSpacing:
+                                                                              0.0,
                                                                           fontWeight:
                                                                               FontWeight.w600,
                                                                         ),
@@ -3550,12 +3795,24 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                       false,
                                                                   decoration:
                                                                       InputDecoration(
-                                                                    labelStyle:
-                                                                        FlutterFlowTheme.of(context)
-                                                                            .labelMedium,
+                                                                    labelStyle: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     hintStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .labelMedium,
+                                                                        .labelMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Plus Jakarta Sans',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     enabledBorder:
                                                                         OutlineInputBorder(
                                                                       borderSide:
@@ -3613,7 +3870,13 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                   ),
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .bodyMedium,
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
                                                                   validator: _model
                                                                       .contactocelularController2Validator
                                                                       .asValidator(
@@ -3764,6 +4027,7 @@ class _FormularioWidgetState extends State<FormularioWidget>
                                                                               .override(
                                                                                 fontFamily: 'Plus Jakarta Sans',
                                                                                 color: Colors.white,
+                                                                                letterSpacing: 0.0,
                                                                               ),
                                                                           elevation:
                                                                               3.0,

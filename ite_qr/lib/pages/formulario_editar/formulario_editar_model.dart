@@ -276,8 +276,6 @@ class FormularioEditarModel extends FlutterFlowModel<FormularioEditarWidget> {
   TextEditingController? contactocelularController2;
   String? Function(BuildContext, String?)? contactocelularController2Validator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     navbarModel1 = createModel(context, () => NavbarModel());
@@ -342,10 +340,7 @@ class FormularioEditarModel extends FlutterFlowModel<FormularioEditarWidget> {
     contactocelularController2?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get pagomensualunicoValue => pagomensualunicoValueController?.value;
   String? get mascotasValue => mascotasValueController?.value;
 }

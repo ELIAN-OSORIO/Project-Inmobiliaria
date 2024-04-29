@@ -17,8 +17,6 @@ class PerfilEditarNombreModel
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     navbarModel1 = createModel(context, () => NavbarModel());
@@ -33,8 +31,4 @@ class PerfilEditarNombreModel
     textFieldFocusNode?.dispose();
     textController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

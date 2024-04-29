@@ -16,8 +16,6 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     navbarModel1 = createModel(context, () => NavbarModel());
@@ -30,8 +28,4 @@ class PerfilModel extends FlutterFlowModel<PerfilWidget> {
     navbarModel1.dispose();
     navbarModel2.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }
