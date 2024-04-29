@@ -18,6 +18,9 @@ Estado: [Listo para revisión]
   - Solución 1
     - Frontend
     - Backend
+  - Solución 2 (Alternativa)
+    - Frontend Alternativo
+    - Backend Alternativo
 - Consideraciones
 - Métricas
 
@@ -62,6 +65,18 @@ El frontend de la aplicación se desarrollará utilizando Flutter. Se crearán p
 #### Backend
 
 Para el backend, se utilizará Firebase como base de datos para almacenar los detalles de las propiedades. Se configurarán reglas de seguridad para garantizar que solo los usuarios autorizados puedan acceder y modificar los datos.
+
+### Solución 2 (Alternativa)
+
+En caso de que no sea posible utilizar Flutter y Firebase, se explorará una alternativa para el desarrollo de la aplicación y la página web PWA.
+
+#### Frontend Alternativo
+
+Se investigarán otras tecnologías de desarrollo de aplicaciones móviles y páginas web progresivas que puedan proporcionar funcionalidades similares a las ofrecidas por Flutter.
+
+#### Backend Alternativo
+
+Se evaluarán diferentes opciones para la implementación de un backend que pueda almacenar y sincronizar los datos de las propiedades de manera eficiente y segura.
 
 ## Consideraciones
 
